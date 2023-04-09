@@ -9,6 +9,7 @@ For example:
 can also be written as 123<sub>10<sub>
 
 Now let us look at the number position, the base to the power of position
+
 | Number|Position|Base<sup>position<sup>|Position Value (PV)|Number Value= PV * Number|
 | --- | --- | --- | --- |
 |3|0|10<sup>0<sup>|1|3|
