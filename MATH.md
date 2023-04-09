@@ -1,5 +1,12 @@
 # MATH for Progrmmers 
 ## Number System
+A number system is a system for representing numbers.
+
+The value of any digit in a number can be determined by a digit, it's position in the number, and the base of the number system.
+
+For example:
+123 with a base 10
+can also be written as 123<sub>10<sub>
 
 | System | Base | Symbols |
 | --- | --- | --- |
