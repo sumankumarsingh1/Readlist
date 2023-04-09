@@ -1,4 +1,4 @@
-# MATH for Progrmmers 
+# MATH for Programmers 
 ## Number System
 
 | System | Base | Symbols |
@@ -29,10 +29,6 @@
 | 15 | 1111 | 17 | F |
 
 
-
-
-
-
 ## Converting Decimal to Binary
 
 
@@ -49,3 +45,8 @@
 
 
 ## Converting Binary to Hexadecimal
+
+### Math Support in Markdown
+
+When $a \ne 0$, there are two solutions to $(ax^2 + bx + c = 0)$ and they are 
+$$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
