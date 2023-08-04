@@ -3,7 +3,7 @@
 
 ```mermaid
 graph TD;
-    [Cyber Security]-->B;
+    [Cyber_Security]-->B;
     A-->C;
     B-->D;
     C-->D;
