@@ -3,10 +3,8 @@
 
 ```mermaid
 graph TD;
-    "Computer Science"-->"Security";
-    "Security"-->"Cyber Security";
-    "Cyber Security"-->"CEH";
-    "Cyber Security"-->"CISSP";
-    "Cyber Security"-->"CISA";
-    "Cyber Security"-->"CISM";
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
 ```
