@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Executor Framework Documentation</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #333;
+        }
+
+        p {
+            line-height: 1.5;
+            color: #555;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Java Executor Framework Documentation</h1>
+
+    <p>The Java Executor Framework provides a higher-level replacement for managing and controlling threads in Java applications. It is part of the <code>java.util.concurrent</code> package and offers a way to manage thread execution, handle thread pooling, and parallelize tasks efficiently.</p>
+
+    <h2>Main Components</h2>
+
+    <h3>1. Executor Interface</h3>
+    <p>The <code>Executor</code> interface is the root interface in the Executor Framework. It provides a simple <code>execute(Runnable command)</code> method to submit a task for execution. Implementations of this interface, like <code>ThreadPoolExecutor</code>, manage the execution of tasks in various ways.</p>
+
+    <h3>2. ThreadPoolExecutor</h3>
+    <p><code>ThreadPoolExecutor</code> is a concrete implementation of the <code>Executor</code> interface and provides a flexible and customizable thread pool. It allows you to configure core and maximum pool sizes, keep alive times, and various queueing strategies to control task execution.</p>
+
+    <h3>3. Executors Utility Class</h3>
+    <p>The <code>Executors</code> class provides factory methods for creating different types of <code>ExecutorService</code> instances, such as single-threaded, fixed-size, and cached thread pools. It simplifies the process of creating common thread pool configurations.</p>
+
+    <h3>4. ExecutorService Interface</h3>
+    <p>The <code>ExecutorService</code> interface extends the <code>Executor</code> interface and provides additional methods for managing the lifecycle of tasks. It includes methods for submitting tasks and receiving <code>Future</code> objects, allowing you to monitor the progress and results of submitted tasks.</p>
+
+    <h3>5. Future Interface</h3>
+    <p>The <code>Future</code> interface represents the result of an asynchronous computation. It provides methods to check if the computation is complete, retrieve the result, and cancel the task if needed. Tasks submitted to an <code>ExecutorService</code> return a <code>Future</code> object.</p>
+
+    <h2>Example Usage</h2>
+
+    <p>Here's a simple example demonstrating the usage of the Executor Framework:</p>
+
+    <code>
+        import java.util.concurrent.ExecutorService;<br>
+        import java.util.concurrent.Executors;<br>
+
+        public class ExecutorExample {<br>
+            &emsp;public static void main(String[] args) {<br>
+                &emsp;&emsp;// Create a fixed-size thread pool with 3 threads<br>
+                &emsp;&emsp;ExecutorService executor = Executors.newFixedThreadPool(3);<br>
+
+                &emsp;&emsp;// Submit tasks for execution<br>
+                &emsp;&emsp;for (int i = 0; i < 5; i++) {<br>
+                    &emsp;&emsp;&emsp;executor.submit(() -> {<br>
+                        &emsp;&emsp;&emsp;&emsp;System.out.println("Task executed by thread: " + Thread.currentThread().getName());<br>
+                    &emsp;&emsp;&emsp;});<br>
+                &emsp;&emsp;}<br>
+
+                &emsp;&emsp;// Shutdown the executor service<br>
+                &emsp;&emsp;executor.shutdown();<br>
+            &emsp;}<br>
+        }
+    </code>
+
+    <p>This example creates a fixed-size thread pool, submits tasks for execution, and then shuts down the executor service after all tasks are completed.</p>
+
+    <p>For more detailed information and advanced usage, refer to the official <a href="https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/util/concurrent/package-summary.html" target="_blank">Java Executor Framework documentation</a>.</p>
+
+</body>
+</html>
