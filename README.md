@@ -1,9 +1,11 @@
 # Readlist
+
+## [Scaler Notes](./scaler.md)
+
 * Operating Systems
   * Linux
   * Windows
   * Mac
-  * 
 
 * Applications
   * Ms Office

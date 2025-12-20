@@ -1,6 +1,7 @@
 # Modules
-* Introduction to Programming - Beginner
-* Introduction to Problem Solving - Intermediate
-* Advanced DSA
-* Databases & SQL
+* [Introduction to Programming - Beginner](./beginner.md)
+* [Introduction to Problem Solving - Intermediate](./intermediate.md)
+* [Advanced DSA](./advance_dsa.md)
+* [Databases & SQL](./database.md)
+
 
