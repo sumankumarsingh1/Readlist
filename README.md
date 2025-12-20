@@ -1,6 +1,6 @@
 # Readlist
 
-## [Scaler Notes](./scaler.md)
+## [Scaler Notes](./Scaler/scaler.md)
 
 * Operating Systems
   * Linux
