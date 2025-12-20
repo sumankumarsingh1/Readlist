@@ -5,3 +5,9 @@
 * [Databases & SQL](./database.md)
 * [Backend LLD and Development](./backend.md)
 * [High Level Design](./hld.md)
+* [Capstone Project](./project.md)
+* []()
+* []()
+* []()
+* []()
+
