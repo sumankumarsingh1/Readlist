@@ -1,5 +1,7 @@
 # Readlist
 
+## [CKAD KillerKoda Notes](./CKAD/CKAD1.md)
+
 ## [Scaler Notes](./Scaler/scaler.md)
 
 * Operating Systems
