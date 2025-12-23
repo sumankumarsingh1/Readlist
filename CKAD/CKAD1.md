@@ -24,9 +24,6 @@
 }
 </style>
 
-
-# CKAD Notes
-
 ## Killer Coda Notes
 
 
@@ -135,6 +132,10 @@ status: {}
 $ k get pods  
 No resources found in default namespace.
 
+$ vi 2.yaml
+```
+Changed the container name to pod1-container
+```
 $ k create -f 2.yaml
 pod/pod1 created
 controlplane:~$ k get pods

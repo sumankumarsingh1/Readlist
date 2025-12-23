@@ -15,7 +15,7 @@
 * [Projects: Testing 3](./project.md)
 * [Projects: Authentication - 1: Auth v/s Auth, Tokens, BCrypt](./project.md)
 * [Projects: Authentication - 2: JWT, OAuth 2](./project.md)
-* [Projects: Authentication 3: Implementing User Service Self](./project.md)
+* [Projects: Authentication 3: Implementing User Service Self](./auth3.md)
 * [Projects: Authentication - 4: Implementng OAuth 2](./project.md)
 * [Projects: Deploying Applications to AWS](./project.md)
 * [Projects: EBS, RDS](./project.md)

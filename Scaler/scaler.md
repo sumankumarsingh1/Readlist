@@ -5,7 +5,7 @@
 * [Databases & SQL](./database.md)
 * [Backend LLD and Development](./backend.md)
 * [High Level Design](./hld.md)
-* [Capstone Project](./project.md)
+* [Capstone Project](./project/project.md)
 * [Data Engineering](./data_engineering.md)
 * [DSA for Competitive Programing](./dsa_competitive.md)
 * []()
