@@ -1,4 +1,4 @@
-# Interactive Scenarios for Kubernetes Application Developers
+# Interactive Scenarios for Kubernetes Application Developers (2 of ?)
 
 Reference: <https://killercoda.com/killer-shell-ckad>
 
@@ -450,38 +450,46 @@ Writing manifest to image destination
 controlplane:~$ 
 ```
 
-## Rollout Rolling
+### Push image with custom tag to registry
 
-Perform a rolling rollout of an application
+Without specifying a **`:tag`** , the default **`:latest`** will be used. Now we want to use tag **`:v1`** instead.
 
-## Rollout Green-Blue
+Tag the image, which is currently tagged as **`pinger`** , also as **`pinger:v1`** and **`local-registry:5000/pinger:v1`** .
 
-Perform a Green-Blue rollout of an application
+Then push the image into the local registry.
 
-## Rollout Canary
 
-Perform a Canary rollout of an application
+#### Solution
 
-## Custom Resource Definitions
+```bash
+podman tag pinger pinger:v1
 
-Work with CRDs that extend Kubernetes
+podman tag pinger local-registry:5000/pinger:v1
 
-## Helm
+podman image ls
 
-Use the Helm package manager
+podman push local-registry:5000/pinger:v1
+```
 
-## Ingress Create
+#### Output
 
-Create a new Ingress for existing Deployments
-
-## NetworkPolicy Namespace Selector
-
-Allow communication between two Namespaces
-
-## Admission Controllers
-
-Manage and see Admission Controllers in action
-
-## Api Deprecations
-
-Work with Api Versions, Groups and Deprecations
+```bash
+controlplane:~$ podman tag pinger pinger:v1
+controlplane:~$ podman tag pinger local-registry:5000/pinger:v1
+controlplane:~$ podman images
+REPOSITORY                  TAG         IMAGE ID      CREATED        SIZE
+local-registry:5000/pinger  v1          716c66c0d17d  5 minutes ago  16.1 MB
+localhost/pinger            v1          716c66c0d17d  5 minutes ago  16.1 MB
+local-registry:5000/pinger  latest      716c66c0d17d  5 minutes ago  16.1 MB
+localhost/pinger            latest      716c66c0d17d  5 minutes ago  16.1 MB
+docker.io/library/bash      latest      7f35a61f4a30  8 days ago     16.1 MB
+docker.io/library/registry  2           26b2eb03618e  2 years ago    26 MB
+controlplane:~$ podman push local-registry:5000/pinger:v1
+Getting image source signatures
+Copying blob b56fa8e1ff59 skipped: already exists  
+Copying blob 1a9a48c98dea skipped: already exists  
+Copying blob fead7c895b0c skipped: already exists  
+Copying config 716c66c0d1 done   | 
+Writing manifest to image destination
+controlplane:~$ 
+```
