@@ -474,7 +474,7 @@ controlplane:~$
 
 #### Output 2
 
-```
+```bash
 controlplane:~$ k -f /root/cm.yaml create
 configmap/birke created
 controlplane:~$ k get cm

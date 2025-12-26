@@ -232,4 +232,28 @@ Now we update the AuthService.java login function to save the session:
 Now we validate the token:
 To validate the token we are introducting a new function validateToken with mapping (/validate)
 
+## Deploying the application on Elastic Bean Stalk on AWS
+
+* Click on the search bar on console and search for Elastic Beanstalk.
+* Click on Create Envoronment  
+It will show the following steps on the left hand side:
+  * Step 1: Configure Environment
+  * Step 2: Configure Service Access
+  * Step 3: Optional: Setup networking, database, and tags
+  * Step 4: Optional: Configure instance traffic and scaling
+  * Step 5: Optional: Configure updates, monitoring, and logging
+  * Step 6: Review
+
+### Step 1: Configure Environment
+
+### Step 2: Configure Service Access
+
+### Step 3: Optional: Setup networking, database, and tags
+
+### Step 4: Optional: Configure instance traffic and scaling
+
+### Step 5: Optional: Configure updates, monitoring, and logging
+
+### Step 6: Review
+
 
