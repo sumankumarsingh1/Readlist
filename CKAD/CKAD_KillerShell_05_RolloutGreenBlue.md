@@ -1,8 +1,8 @@
-# Interactive Scenarios for Kubernetes Application Developers (3 of ?)
+# Interactive Scenarios for Kubernetes Application Developers (5 of 12)
 
 Reference: <https://killercoda.com/killer-shell-ckad>
 
-## Rollout Green-Blue
+## [Rollout Green-Blue](https://killercoda.com/killer-shell-ckad/scenario/rollout-green-blue)
 
 ### Perform a Green-Blue rollout of an application
 

@@ -1,9 +1,9 @@
-# Interactive Scenarios for Kubernetes Application Developers (3 of ?)
+# Interactive Scenarios for Kubernetes Application Developers (4 of 12)
 
 Reference: <https://killercoda.com/killer-shell-ckad>
 
 
-## Rollout Rolling
+## [Rollout Rolling](https://killercoda.com/killer-shell-ckad/scenario/rollout-rolling)
 
 ### Perform a rolling rollout of an application
 

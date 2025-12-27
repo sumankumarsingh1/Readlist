@@ -1,8 +1,8 @@
-# Interactive Scenarios for Kubernetes Application Developers (3 of ?)
+# Interactive Scenarios for Kubernetes Application Developers (6 of 12)
 
 Reference: <https://killercoda.com/killer-shell-ckad>
 
-## Rollout Canary
+## [Rollout Canary](https://killercoda.com/killer-shell-ckad/scenario/rollout-canary)
 
 ### Perform a Canary rollout of an application
 

@@ -2,14 +2,6 @@
 
 Reference: <https://killercoda.com/killer-shell-ckad>
 
-## Rollout Canary
-
-Perform a Canary rollout of an application
-
-## Custom Resource Definitions
-
-Work with CRDs that extend Kubernetes
-
 ## Helm
 
 Use the Helm package manager

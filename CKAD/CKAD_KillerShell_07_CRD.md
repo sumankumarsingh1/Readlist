@@ -1,8 +1,8 @@
-# Interactive Scenarios for Kubernetes Application Developers (3 of ?)
+# Interactive Scenarios for Kubernetes Application Developers (7 of 12)
 
 Reference: <https://killercoda.com/killer-shell-ckad>
 
-## Custom Resource Definitions
+## [Custom Resource Definitions](https://killercoda.com/killer-shell-ckad/scenario/crd)
 
 Work with CRDs that extend Kubernetes
 
