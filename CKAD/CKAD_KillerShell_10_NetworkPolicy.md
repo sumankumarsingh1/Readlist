@@ -1,4 +1,4 @@
-# Interactive Scenarios for Kubernetes Application Developers (3 of 12)
+# Interactive Scenarios for Kubernetes Application Developers (10 of 12)
 
 Reference: <https://killercoda.com/killer-shell-ckad>
 
