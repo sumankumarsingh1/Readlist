@@ -2,7 +2,7 @@
 
 > By Chad M. Crowell
 
-## Create a job and cronJob in Kubernetes
+## [Create a job and cronJob in Kubernetes](https://killercoda.com/chadmcrowell/course/ckad/jobs)
 
 Welcome !
 In this scenario, we'll learn how to create an run both a job and cronJob in Kubernetes!

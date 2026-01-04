@@ -2,7 +2,7 @@
 
 > By Chad M. Crowell
 
-## Creating a pod with configMap
+## [Creating a pod with configMap](https://killercoda.com/chadmcrowell/course/ckad/create-configmap)
 
 Welcome !
 In this scenario, we'll learn how to create a configMap for a pod in Kubernetes

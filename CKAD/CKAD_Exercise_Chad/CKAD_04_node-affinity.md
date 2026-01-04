@@ -2,7 +2,7 @@
 
 > By Chad M. Crowell
 
-## Apply node affinity to a pod
+## [Apply node affinity to a pod](https://killercoda.com/chadmcrowell/course/ckad/node-affinity)
 
 Welcome !
 In this scenario, we'll learn how to apply node affinity to a pod in Kubernetes!

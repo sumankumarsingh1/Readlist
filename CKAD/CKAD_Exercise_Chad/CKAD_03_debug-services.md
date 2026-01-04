@@ -2,7 +2,7 @@
 
 > By Chad M. Crowell
 
-## Debug services in Kubernetes
+## [Debug services in Kubernetes](https://killercoda.com/chadmcrowell/course/ckad/debug-services)
 
 Welcome !
 In this scenario, we'll learn how to debug services in Kubernetes

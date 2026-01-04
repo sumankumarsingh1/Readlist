@@ -2,7 +2,7 @@
 
 > By Chad M. Crowell
 
-## Create Dockerfile with Args and Run
+## [Create Dockerfile with Args and Run](https://killercoda.com/chadmcrowell/course/ckad/dockerfile)
 
 Welcome !
 In this scenario, we'll learn how to build and run a Docker container!
