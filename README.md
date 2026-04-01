@@ -1,5 +1,9 @@
 # Readlist
 
+## [Git](./Git/git_notes.md)
+
+## [Building LLM Notes](./LLM/Build_LLM1.md)
+
 ## [CKAD KillerKoda Notes](./CKAD/CKAD1.md)
 
 ## [Scaler Notes](./Scaler/scaler.md)
@@ -10,7 +14,15 @@
 
 ## [Telecom](./Telecom/Telecom.md)
 
+## [Python]()
 
+## [Ecommerce App](./ecommerce/ecommerce1.md)
+
+## [Kaggle Learning](https://www.kaggle.com/learn)
+
+## [CBCI](./CBCI/cbci1.md)
+
+## [Mermaid](./Mermaid/Mermaid1.md)
 
 
 * Operating Systems
@@ -40,3 +52,6 @@
 * Kubernetes
 * Podman
 
+* PMI
+* ISC2
+* AIGP
