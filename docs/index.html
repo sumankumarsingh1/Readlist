@@ -3,57 +3,56 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Suman Kumar | Developer</title>
+  <title>Suman Kumar | Profile</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="bg-slate-900 text-white">
 
-  <div class="max-w-3xl mx-auto p-6 text-center">
+<div class="max-w-4xl mx-auto p-6">
 
-    <!-- Profile -->
-    <img src="https://avatars.githubusercontent.com/u/YOUR_ID"
-         class="w-28 h-28 rounded-full mx-auto border-4 border-sky-400"/>
-
-    <h1 class="text-3xl font-bold mt-4">Suman Kumar</h1>
+  <!-- Header -->
+  <div class="text-center">
+    <h1 class="text-4xl font-bold">Suman Kumar</h1>
     <p class="text-slate-400">Software Developer & Product Engineer</p>
-
-    <!-- Links -->
-    <div class="mt-4 space-x-4">
-      <a href="https://github.com/sumankumarsingh1" class="text-sky-400">GitHub</a>
-      <a href="#" class="text-sky-400">LinkedIn</a>
-      <a href="#" class="text-sky-400">Portfolio</a>
-    </div>
-
-    <!-- About -->
-    <div class="mt-10 text-left">
-      <h2 class="text-xl font-semibold mb-2">About Me</h2>
-      <p class="text-slate-300">
-        I enjoy building products, experimenting with ideas, and learning by doing.
-      </p>
-    </div>
-
-    <!-- Projects -->
-    <div class="mt-10 text-left">
-      <h2 class="text-xl font-semibold mb-4">Projects</h2>
-
-      <div class="grid gap-4">
-
-        <div class="p-4 bg-slate-800 rounded-xl">
-          <h3 class="font-bold">📚 Readlist</h3>
-          <p class="text-sm text-slate-400">Track and manage reading lists.</p>
-        </div>
-
-        <div class="p-4 bg-slate-800 rounded-xl">
-          <h3 class="font-bold">🚀 More coming</h3>
-          <p class="text-sm text-slate-400">Always building something new.</p>
-        </div>
-
-      </div>
-    </div>
-
   </div>
+
+  <!-- Sections -->
+  <div id="content" class="mt-10 space-y-10"></div>
+
+</div>
+
+<script src="data.js"></script>
+<script>
+  const container = document.getElementById("content");
+
+  function createSection(title, items) {
+    const section = document.createElement("div");
+
+    section.innerHTML = `
+      <h2 class="text-2xl font-semibold mb-4">${title}</h2>
+      <div class="space-y-4">
+        ${items.map(item => `
+          <div class="p-4 bg-slate-800 rounded-xl">
+            <h3 class="font-bold">${item.title}</h3>
+            <p class="text-sm text-slate-400">${item.subtitle || ""}</p>
+            <p class="text-sm mt-2">${item.description || ""}</p>
+          </div>
+        `).join("")}
+      </div>
+    `;
+
+    container.appendChild(section);
+  }
+
+  // Render all sections
+  createSection("💼 Work Experience", data.work);
+  createSection("🎓 Education", data.education);
+  createSection("📜 Certifications", data.certifications);
+  createSection("🧠 Trainings", data.trainings);
+  createSection("🚀 Projects", data.projects);
+</script>
 
 </body>
 </html>
