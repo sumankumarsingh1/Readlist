@@ -1,58 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Suman Kumar | Profile</title>
-
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-
-<body class="bg-slate-900 text-white">
-
-<div class="max-w-4xl mx-auto p-6">
-
-  <!-- Header -->
-  <div class="text-center">
-    <h1 class="text-4xl font-bold">Suman Kumar</h1>
-    <p class="text-slate-400">Software Developer & Product Engineer</p>
-  </div>
-
-  <!-- Sections -->
-  <div id="content" class="mt-10 space-y-10"></div>
-
-</div>
-
-<script src="data.js"></script>
 <script>
-  const container = document.getElementById("content");
+const container = document.getElementById("content");
 
-  function createSection(title, items) {
-    const section = document.createElement("div");
-
-    section.innerHTML = `
+function section(title, content) {
+  return `
+    <div>
       <h2 class="text-2xl font-semibold mb-4">${title}</h2>
-      <div class="space-y-4">
-        ${items.map(item => `
-          <div class="p-4 bg-slate-800 rounded-xl">
-            <h3 class="font-bold">${item.title}</h3>
-            <p class="text-sm text-slate-400">${item.subtitle || ""}</p>
-            <p class="text-sm mt-2">${item.description || ""}</p>
-          </div>
-        `).join("")}
-      </div>
-    `;
+      ${content}
+    </div>
+  `;
+}
 
-    container.appendChild(section);
-  }
+// Summary
+container.innerHTML += section("👤 Profile", `
+  <p class="text-slate-300">${data.summary}</p>
+`);
 
-  // Render all sections
-  createSection("💼 Work Experience", data.work);
-  createSection("🎓 Education", data.education);
-  createSection("📜 Certifications", data.certifications);
-  createSection("🧠 Trainings", data.trainings);
-  createSection("🚀 Projects", data.projects);
+// Experience
+container.innerHTML += section("💼 Experience", `
+  ${data.experience.map(e => `
+    <div class="p-4 bg-slate-800 rounded-xl mb-3">
+      <h3 class="font-bold">${e.title} - ${e.company}</h3>
+      <p class="text-sm text-slate-400">${e.duration}</p>
+      <ul class="list-disc ml-5 mt-2 text-sm">
+        ${e.highlights.map(h => `<li>${h}</li>`).join("")}
+      </ul>
+    </div>
+  `).join("")}
+`);
+
+// Projects
+container.innerHTML += section("🚀 Key Projects", `
+  ${data.projects.map(p => `
+    <div class="p-4 bg-slate-800 rounded-xl mb-3">
+      <h3 class="font-bold">${p.title}</h3>
+      <p class="text-sm text-slate-400">${p.description}</p>
+    </div>
+  `).join("")}
+`);
+
+// Certifications
+container.innerHTML += section("📜 Certifications", `
+  <ul class="list-disc ml-5">
+    ${data.certifications.map(c => `<li>${c}</li>`).join("")}
+  </ul>
+`);
+
+// Skills
+container.innerHTML += section("🧠 Skills", `
+  <div class="flex flex-wrap gap-2">
+    ${data.skills.map(s => `
+      <span class="bg-sky-500/20 px-3 py-1 rounded-full text-sm">${s}</span>
+    `).join("")}
+  </div>
+`);
+
+// Education
+container.innerHTML += section("🎓 Education", `
+  <ul class="list-disc ml-5">
+    ${data.education.map(e => `<li>${e}</li>`).join("")}
+  </ul>
+`);
 </script>
-
-</body>
-</html>
