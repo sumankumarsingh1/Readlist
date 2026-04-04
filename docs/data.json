@@ -1,0 +1,125 @@
+{
+  "summary": "Technology Leader with experience in Cloud, AI, SaaS, and Enterprise Systems.",
+
+  "experience": [
+    {
+      "title": "Principal Product Strategy Manager",
+      "company": "Oracle",
+      "duration": "2023 - Present",
+      "highlights": [
+        "Leading SaaS BCDR strategy",
+        "Driving DR automation and AI initiatives"
+      ]
+    }
+  ],
+
+
+  "projects": [
+
+    {
+        "title": "BCDR Governance, Compliance & DR Exercise Program",
+        "company": "Oracle India Pvt. Ltd.",
+        "duration": "Feb 2023 – Present",
+        "details": "Led governance and disaster recovery readiness across multiple SaaS services.",
+        "roles": ["Program Manager", "SME"],
+        "problem": "Lack of standardized DR governance and audit readiness across services",
+        "solution": "Established governance framework and conducted structured DR exercises",
+        "impact": "Improved resilience, compliance posture, and audit readiness",
+        "technologies": ["BCDR", "ISO 22301", "ISO 27001"],
+        "teamSize": "Cross-functional (15+ services)"
+    },
+
+    {
+        "title": "DR Exercise Portal with AI/LLM (RAG)",
+        "company": "Oracle India Pvt. Ltd.",
+        "duration": "2023 – Present",
+        "details": "Built AI-based system for intelligent retrieval of DR procedures.",
+        "roles": ["Developer"],
+        "problem": "DR documentation was difficult to search and manually intensive",
+        "solution": "Implemented LLM + RAG system with embeddings",
+        "impact": "Enabled contextual knowledge retrieval and faster decision-making",
+        "technologies": ["Python", "LLM", "RAG", "Embeddings"],
+        "teamSize": "2"
+    },
+
+    {
+        "title": "Release Management Dashboard Automation",
+        "company": "Oracle India Pvt. Ltd.",
+        "duration": "2023 – Present",
+        "details": "Automated release tracking and reporting using APIs.",
+        "roles": ["Developer"],
+        "problem": "Manual tracking caused delays and lack of visibility",
+        "solution": "Built dashboard using JIRA APIs and automation scripts",
+        "impact": "Improved transparency and reduced manual effort",
+        "technologies": ["Python", "JIRA API", "HTML", "JavaScript"],
+        "teamSize": "1"
+    },
+
+    {
+        "title": "MLflow Deployment Automation on Kubernetes",
+        "company": "Calsoft",
+        "duration": "2021 – 2023",
+        "details": "Automated deployment of MLflow using Kubernetes.",
+        "roles": ["Developer"],
+        "problem": "Manual MLflow setup was time-consuming and error-prone",
+        "solution": "Created automation scripts and APIs for deployment",
+        "impact": "Enabled scalable and repeatable MLOps setup",
+        "technologies": ["Python", "Kubernetes", "MLflow"],
+        "teamSize": "4"
+    },
+
+    {
+        "title": "4G to 5G Migration & SBA Architecture",
+        "company": "Calsoft",
+        "duration": "2021 – 2023",
+        "details": "Led telecom migration to 5G service-based architecture.",
+        "roles": ["Technical Project Manager", "Telecom SME"],
+        "problem": "Legacy 4G architecture needed modernization",
+        "solution": "Designed and guided migration to 5G SBA architecture",
+        "impact": "Enabled scalable and modern telecom infrastructure",
+        "technologies": ["5G", "SBA", "Microservices"],
+        "teamSize": "10–12"
+    },
+
+    {
+        "title": "Amazon Connect Voice Bot Implementation",
+        "company": "Previous Organization",
+        "duration": "2020 – 2021",
+        "details": "Implemented voice bot for customer interaction automation.",
+        "roles": ["Solution Architect"],
+        "problem": "Manual call handling caused inefficiencies",
+        "solution": "Built automated voice bot using Amazon Connect",
+        "impact": "Improved customer experience and reduced manual effort",
+        "technologies": ["AWS", "Amazon Connect", "Lambda"],
+        "teamSize": "5"
+    },
+
+    {
+        "title": "NLU Data Processing Pipeline",
+        "company": "Previous Organization",
+        "duration": "2019 – 2020",
+        "details": "Built scalable data pipeline for chatbot training.",
+        "roles": ["Developer"],
+        "problem": "Training data processing was slow and unstructured",
+        "solution": "Implemented distributed pipeline using Spark",
+        "impact": "Improved training efficiency and scalability",
+        "technologies": ["Spark", "Python"],
+        "teamSize": "3"
+    },
+
+    {
+        "title": "Enterprise Monitoring & Alerting System",
+        "company": "Earlier Organization",
+        "duration": "2017 – 2019",
+        "details": "Developed monitoring and alerting for enterprise systems.",
+        "roles": ["Lead Engineer"],
+        "problem": "Lack of proactive monitoring caused downtime",
+        "solution": "Built centralized monitoring and alerting solution",
+        "impact": "Reduced downtime and improved system reliability",
+        "technologies": ["Monitoring Tools", "Scripting"],
+        "teamSize": "6"
+    }
+    
+  ]
+
+}
