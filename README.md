@@ -1,5 +1,7 @@
 # Readlist
 
+## [OCI](./OCI/OCI.md)
+
 ## [Git](./Git/git_notes.md)
 
 ## [Building LLM Notes](./LLM/Build_LLM1.md)
