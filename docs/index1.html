@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Suman Kumar | Profile</title>
+
+  <!-- Tailwind (fine for now) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-900 text-white">
+
+<div class="max-w-4xl mx-auto p-6">
+
+  <!-- Header -->
+  <div class="text-center">
+    <h1 class="text-4xl font-bold">Suman Kumar</h1>
+    <p class="text-slate-400 mt-2">Technology Leader | Cloud | AI | SaaS</p>
+  </div>
+
+  <!-- Content -->
+  <div id="content" class="mt-10 space-y-10"></div>
+
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", async () => {
+
+  const container = document.getElementById("content");
+
+  try {
+    // ✅ Load JSON
+    const response = await fetch("data.json");
+    const data = await response.json();
+
+    console.log("Loaded data:", data);
+
+    // ===============================
+    // Generic Section Renderer
+    // ===============================
+    function createSection(title, items) {
+      if (!items || items.length === 0) return;
+
+      const section = document.createElement("div");
+
+      section.innerHTML = `
+        <h2 class="text-2xl font-semibold mb-4">${title}</h2>
+        <div class="space-y-4">
+          ${(items || []).map(item => `
+            <div class="p-4 bg-slate-800 rounded-xl shadow">
+
+              <h3 class="font-bold text-lg">
+                ${item.title || ""}
+                ${item.company ? " - " + item.company : ""}
+              </h3>
+
+              <p class="text-sm text-slate-400">
+                ${item.duration || item.subtitle || ""}
+              </p>
+
+              ${
+                item.description
+                ? `<p class="text-sm mt-2">${item.description}</p>`
+                : ""
+              }
+
+              ${
+                item.highlights
+                ? `<ul class="list-disc ml-5 mt-2 text-sm space-y-1">
+                    ${item.highlights.map(h => `<li>${h}</li>`).join("")}
+                  </ul>`
+                : ""
+              }
+
+            </div>
+          `).join("")}
+        </div>
+      `;
+
+      container.appendChild(section);
+    }
+
+    // ===============================
+    // Project Section (Custom)
+    // ===============================
+    function createProjectSection(items) {
+      if (!items || items.length === 0) return;
+
+      const section = document.createElement("div");
+
+      section.innerHTML = `
+        <h2 class="text-2xl font-semibold mb-4">🚀 Projects</h2>
+        <div class="space-y-4">
+          ${items.map(item => `
+            <div class="p-4 bg-slate-800 rounded-xl">
+
+              <h3 class="font-bold text-lg">${item.title || ""}</h3>
+
+              <p class="text-sm text-slate-400">
+                ${item.company || ""} | ${item.duration || ""}
+              </p>
+
+              ${
+                item.details
+                ? `<p class="text-sm mt-2">${item.details}</p>`
+                : ""
+              }
+
+              ${
+                item.roles
+                ? `<p class="text-sm mt-2">
+                    <strong>Roles:</strong> ${(item.roles || []).join(", ")}
+                   </p>`
+                : ""
+              }
+
+              ${item.problem ? `<p><strong>Problem:</strong> ${item.problem}</p>` : ""}
+              ${item.solution ? `<p><strong>Solution:</strong> ${item.solution}</p>` : ""}
+              ${item.impact ? `<p><strong>Impact:</strong> ${item.impact}</p>` : ""}
+
+              ${
+                item.technologies
+                ? `<p class="text-sm">
+                    <strong>Technologies:</strong> ${(item.technologies || []).join(", ")}
+                   </p>`
+                : ""
+              }
+
+              ${
+                item.teamSize
+                ? `<p class="text-sm">
+                    <strong>Team Size:</strong> ${item.teamSize}
+                   </p>`
+                : ""
+              }
+
+            </div>
+          `).join("")}
+        </div>
+      `;
+
+      container.appendChild(section);
+    }
+
+    // ===============================
+    // Render Sections
+    // ===============================
+
+    // Profile Summary
+    if (data.summary) {
+      const summarySection = document.createElement("div");
+      summarySection.innerHTML = `
+        <h2 class="text-2xl font-semibold mb-4">👤 Profile</h2>
+        <p class="text-slate-300">${data.summary}</p>
+      `;
+      container.appendChild(summarySection);
+    }
+
+    // Main Sections
+    createSection("💼 Experience", data.experience);
+
+    createSection(
+      "🎓 Education",
+      (data.education || []).map(e => ({ title: e }))
+    );
+
+    createSection(
+      "📜 Certifications",
+      (data.certifications || []).map(c => ({ title: c }))
+    );
+
+    createSection(
+      "🧠 Skills",
+      (data.skills || []).map(s => ({ title: s }))
+    );
+
+    // Projects LAST (as you wanted)
+    createProjectSection(data.projects);
+
+  } catch (error) {
+    console.error("Error loading data:", error);
+
+    container.innerHTML = `
+      <p class="text-red-400">
+        Failed to load profile data. Check console.
+      </p>
+    `;
+  }
+
+});
+</script>
+
+</body>
+</html>
