@@ -1,4 +1,3 @@
-```markdown
 # Study Plan: Building Robust Highly Available Systems and BCDR on OCI
 
 ## Phase 1: OCI Foundations and Physical Infrastructure
