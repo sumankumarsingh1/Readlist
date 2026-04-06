@@ -1,613 +1,505 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sumankumar Akhileshwar Singh – Profile</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sumankumar Singh – Resume</title>
 <style>
-  :root {
-    --bg: #0c0e11; --surface: #13161a; --surface2: #1b1f25; --border: #252a32;
-    --accent: #c9a84c; --accent2: #5b8dd9; --text: #dde1e8; --muted: #6b7280;
-    --heading: #f0f2f5; --tag-bg: #1e2530; --tag-border: #2e3a4a;
-  }
+  /* ── Google Font ── */
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700&family=Source+Sans+3:wght@400;500;600&display=swap');
+
+  /* ── CSS Reset & Variables ── */
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.7; min-height: 100vh; }
 
-  .shell { display: grid; grid-template-columns: 260px 1fr; min-height: 100vh; }
-
-  aside {
-    background: var(--surface); border-right: 1px solid var(--border);
-    padding: 48px 28px; position: sticky; top: 0; height: 100vh;
-    overflow-y: auto; display: flex; flex-direction: column; gap: 32px;
+  :root {
+    --ink:      #1a1a1a;
+    --mid:      #444;
+    --soft:     #666;
+    --rule:     #d0d0d0;
+    --accent:   #1a5276;   /* deep navy – prints well */
+    --tag-bg:   #eaf2fb;
+    --tag-border: #a9cce3;
+    --page-max: 860px;
+    --serif: 'Source Serif 4', Georgia, serif;
+    --sans:  'Source Sans 3', Helvetica, Arial, sans-serif;
   }
-  .avatar-ring {
-    width: 72px; height: 72px; border-radius: 50%;
-    background: linear-gradient(135deg, var(--accent), var(--accent2));
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 900; color: var(--bg);
+
+  /* ── Page Layout ── */
+  body {
+    font-family: var(--sans);
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink);
+    background: #f4f4f4;
+    padding: 32px 16px;
   }
-  .sidebar-name { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--heading); line-height: 1.3; margin-top: 6px; }
-  .sidebar-role { font-size: 0.68rem; color: var(--accent); font-family: 'DM Mono', monospace; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 6px; line-height: 1.6; }
 
-  nav { display: flex; flex-direction: column; gap: 2px; }
-  nav a { display: flex; align-items: center; gap: 10px; color: var(--muted); text-decoration: none; font-size: 0.82rem; padding: 8px 12px; border-radius: 6px; transition: all 0.2s; }
-  nav a:hover, nav a.active { background: var(--surface2); color: var(--heading); }
-  nav a .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--border); flex-shrink: 0; transition: background 0.2s; }
-  nav a:hover .dot, nav a.active .dot { background: var(--accent); }
-
-  .sidebar-links { margin-top: auto; display: flex; flex-direction: column; gap: 10px; }
-  .sidebar-links a { display: flex; align-items: center; gap: 8px; color: var(--muted); text-decoration: none; font-size: 0.78rem; transition: color 0.2s; }
-  .sidebar-links a:hover { color: var(--accent); }
-
-  main { padding: 60px 64px; max-width: 900px; }
-
-  .hero { margin-bottom: 72px; border-bottom: 1px solid var(--border); padding-bottom: 56px; }
-  .hero-label { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--accent); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 20px; }
-  .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 4vw, 3.4rem); font-weight: 900; color: var(--heading); line-height: 1.1; margin-bottom: 14px; }
-  .hero h1 span { color: var(--accent); }
-  .hero-sub { font-size: 0.85rem; color: var(--muted); letter-spacing: 0.04em; margin-bottom: 22px; font-family: 'DM Mono', monospace; }
-  .hero-summary { font-size: 0.95rem; color: var(--text); line-height: 1.85; max-width: 620px; }
-
-  section { margin-bottom: 68px; }
-  .section-label { font-family: 'DM Mono', monospace; font-size: 0.66rem; color: var(--accent); letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 4px; }
-  .section-title { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700; color: var(--heading); margin-bottom: 28px; }
-  .section-title::after { content: ''; display: block; width: 36px; height: 2px; background: var(--accent); margin-top: 10px; }
-
-  .skills-grid { display: flex; flex-wrap: wrap; gap: 8px; }
-  .skill-tag { background: var(--tag-bg); border: 1px solid var(--tag-border); color: var(--text); font-size: 0.78rem; padding: 5px 13px; border-radius: 4px; font-family: 'DM Mono', monospace; transition: all 0.2s; }
-  .skill-tag:hover { border-color: var(--accent); color: var(--accent); }
-
-  .exp-item { display: grid; grid-template-columns: 170px 1fr; gap: 24px; padding: 28px 0; border-bottom: 1px solid var(--border); }
-  .exp-item:last-child { border-bottom: none; }
-  .exp-period { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--accent); letter-spacing: 0.06em; line-height: 1.7; }
-  .exp-company { font-size: 0.78rem; color: var(--muted); margin-top: 5px; }
-  .exp-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--heading); margin-bottom: 12px; line-height: 1.3; }
-  .resp-list { list-style: none; display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
-  .resp-list li { font-size: 0.84rem; color: var(--text); padding-left: 16px; position: relative; line-height: 1.6; }
-  .resp-list li::before { content: '›'; position: absolute; left: 0; color: var(--accent); font-size: 1rem; line-height: 1.4; }
-  .tech-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
-  .tech-pill { background: transparent; border: 1px solid var(--border); color: var(--muted); font-size: 0.7rem; padding: 3px 9px; border-radius: 20px; font-family: 'DM Mono', monospace; }
-
-  .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-  .project-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 20px; transition: all 0.2s; cursor: pointer; }
-  .project-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.4); }
-  .project-period { font-family: 'DM Mono', monospace; font-size: 0.66rem; color: var(--accent); letter-spacing: 0.06em; margin-bottom: 7px; }
-  .project-title { font-family: 'Playfair Display', serif; font-size: 0.92rem; font-weight: 700; color: var(--heading); margin-bottom: 4px; line-height: 1.3; }
-  .project-company { font-size: 0.73rem; color: var(--muted); margin-bottom: 10px; }
-  .project-desc { font-size: 0.79rem; color: var(--text); line-height: 1.6; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-
-  .cert-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-  .cert-group h3 { font-family: 'DM Mono', monospace; font-size: 0.68rem; color: var(--accent2); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px; }
-  .cert-list { list-style: none; display: flex; flex-direction: column; gap: 7px; }
-  .cert-list li { font-size: 0.83rem; color: var(--text); padding: 8px 14px; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; transition: border-color 0.2s; }
-  .cert-list li:hover { border-color: var(--accent2); }
-
-  .tech-section { margin-bottom: 24px; }
-  .tech-section h3 { font-family: 'DM Mono', monospace; font-size: 0.68rem; color: var(--accent2); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 10px; }
-
-  .edu-list { display: flex; flex-direction: column; gap: 14px; }
-  .edu-item { padding: 16px 20px; background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 0 6px 6px 0; }
-  .edu-degree { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--heading); margin-bottom: 3px; }
-  .edu-inst { font-size: 0.78rem; color: var(--muted); font-family: 'DM Mono', monospace; }
-
-  .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.75); z-index: 100; align-items: center; justify-content: center; padding: 24px; backdrop-filter: blur(4px); }
-  .modal-overlay.open { display: flex; }
-  .modal { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 36px; max-width: 620px; width: 100%; max-height: 85vh; overflow-y: auto; position: relative; }
-  .modal-close { position: absolute; top: 14px; right: 18px; background: none; border: none; color: var(--muted); font-size: 1.5rem; cursor: pointer; transition: color 0.2s; line-height: 1; }
-  .modal-close:hover { color: var(--heading); }
-  .modal-period { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--accent); margin-bottom: 6px; }
-  .modal-title { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--heading); margin-bottom: 4px; line-height: 1.3; }
-  .modal-client { font-size: 0.8rem; color: var(--muted); margin-bottom: 20px; }
-  .modal-section { margin-bottom: 16px; }
-  .modal-section h4 { font-family: 'DM Mono', monospace; font-size: 0.66rem; color: var(--accent2); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 7px; }
-  .modal-section p { font-size: 0.84rem; color: var(--text); line-height: 1.7; }
-  .modal-roles { display: flex; flex-wrap: wrap; gap: 6px; }
-  .modal-role { background: var(--tag-bg); border: 1px solid var(--tag-border); font-size: 0.74rem; padding: 4px 11px; border-radius: 4px; color: var(--text); font-family: 'DM Mono', monospace; }
-
-  ::-webkit-scrollbar { width: 5px; }
-  ::-webkit-scrollbar-track { background: var(--bg); }
-  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
-
-  @media (max-width: 860px) {
-    .shell { grid-template-columns: 1fr; }
-    aside { position: relative; height: auto; padding: 24px; }
-    main { padding: 28px 20px; }
-    .exp-item { grid-template-columns: 1fr; gap: 6px; }
-    .cert-grid, .project-grid { grid-template-columns: 1fr; }
+  .page {
+    max-width: var(--page-max);
+    margin: 0 auto;
+    background: #fff;
+    padding: 48px 52px;
+    border: 1px solid #ddd;
   }
+
+  /* ── Name & Contact ── */
+  .header { border-bottom: 2px solid var(--accent); padding-bottom: 14px; margin-bottom: 18px; }
+
+  .header h1 {
+    font-family: var(--serif);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.02em;
+  }
+
+  .contact-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 20px;
+    margin-top: 6px;
+    font-size: 13px;
+    color: var(--mid);
+  }
+  .contact-row a { color: var(--accent); text-decoration: none; }
+  .contact-row a:hover { text-decoration: underline; }
+
+  /* ── Section ── */
+  .section { margin-bottom: 20px; }
+
+  .section-title {
+    font-family: var(--serif);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 4px;
+    margin-bottom: 10px;
+  }
+
+  /* ── Certifications / Tags ── */
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag {
+    background: var(--tag-bg);
+    border: 1px solid var(--tag-border);
+    border-radius: 3px;
+    padding: 2px 9px;
+    font-size: 12px;
+    color: var(--accent);
+  }
+
+  /* ── About / Objective ── */
+  .prose { color: var(--mid); font-size: 13.5px; }
+
+  /* ── Skills Grid ── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    row-gap: 4px;
+    font-size: 13px;
+  }
+  .skill-label { font-weight: 600; color: var(--ink); }
+  .skill-value { color: var(--mid); }
+
+  /* ── Experience ── */
+  .job { margin-bottom: 14px; }
+
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .job-title {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--ink);
+  }
+
+  .job-company {
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .job-dates {
+    font-size: 12px;
+    color: var(--soft);
+    white-space: nowrap;
+  }
+
+  .job ul {
+    margin: 5px 0 0 16px;
+    color: var(--mid);
+    font-size: 13px;
+  }
+  .job ul li { margin-bottom: 2px; }
+
+  /* ── Education ── */
+  .edu-item { margin-bottom: 8px; font-size: 13px; }
+  .edu-degree { font-weight: 600; color: var(--ink); }
+  .edu-meta { color: var(--soft); }
+
+  /* ── Projects ── */
+  .project-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3px 24px;
+    font-size: 13px;
+    color: var(--mid);
+  }
+  .project-list li { list-style: disc; margin-left: 14px; }
+
+  /* ── Print ── */
+  @media print {
+    body { background: #fff; padding: 0; }
+    .page { border: none; padding: 28px 36px; max-width: 100%; }
+    .no-print { display: none !important; }
+    a { color: var(--accent) !important; text-decoration: none !important; }
+  }
+
+  /* ── Toolbar ── */
+  .toolbar {
+    max-width: var(--page-max);
+    margin: 0 auto 14px;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+  }
+  .btn {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 7px 18px;
+    border-radius: 4px;
+    font-family: var(--sans);
+    font-size: 13px;
+    cursor: pointer;
+    letter-spacing: 0.02em;
+  }
+  .btn:hover { background: #154360; }
 </style>
 </head>
 <body>
 
-<div class="shell">
-  <aside>
-    <div>
-      <div class="avatar-ring" id="avatar"></div>
-      <div class="sidebar-name" id="sidebar-name"></div>
-      <div class="sidebar-role" id="sidebar-role"></div>
-    </div>
-    <nav>
-      <a href="#about" class="active"><span class="dot"></span> About</a>
-      <a href="#skills"><span class="dot"></span> Core Skills</a>
-      <a href="#experience"><span class="dot"></span> Experience</a>
-      <a href="#projects"><span class="dot"></span> Projects</a>
-      <a href="#certifications"><span class="dot"></span> Certifications</a>
-      <a href="#technical"><span class="dot"></span> Tech Stack</a>
-      <a href="#education"><span class="dot"></span> Education</a>
-    </nav>
-    <div class="sidebar-links" id="sidebar-links"></div>
-  </aside>
-
-  <main>
-    <div class="hero" id="about">
-      <div class="hero-label">Professional Profile</div>
-      <h1 id="hero-name"></h1>
-      <div class="hero-sub" id="hero-title"></div>
-      <p class="hero-summary" id="hero-summary"></p>
-    </div>
-    <section id="skills">
-      <div class="section-label">Expertise</div>
-      <div class="section-title">Core Skills</div>
-      <div class="skills-grid" id="skills-grid"></div>
-    </section>
-    <section id="experience">
-      <div class="section-label">Career</div>
-      <div class="section-title">Professional Experience</div>
-      <div id="exp-list"></div>
-    </section>
-    <section id="projects">
-      <div class="section-label">Portfolio</div>
-      <div class="section-title">Selected Projects</div>
-      <div class="project-grid" id="project-grid"></div>
-    </section>
-    <section id="certifications">
-      <div class="section-label">Credentials</div>
-      <div class="section-title">Certifications</div>
-      <div class="cert-grid" id="cert-grid"></div>
-    </section>
-    <section id="technical">
-      <div class="section-label">Tools & Technologies</div>
-      <div class="section-title">Tech Stack</div>
-      <div id="tech-stack"></div>
-    </section>
-    <section id="education">
-      <div class="section-label">Academic</div>
-      <div class="section-title">Education</div>
-      <div class="edu-list" id="edu-list"></div>
-    </section>
-  </main>
+<!-- ── Toolbar ── -->
+<div class="toolbar no-print">
+  <button class="btn" onclick="window.print()">🖨 Print / Save PDF</button>
 </div>
 
-<div class="modal-overlay" id="modal-overlay">
-  <div class="modal">
-    <button class="modal-close" id="modal-close">&#215;</button>
-    <div id="modal-body"></div>
-  </div>
-</div>
+<!-- ── Resume Page ── -->
+<div class="page" id="resume"></div>
 
+<!-- ══════════════════════════════════════════
+     DATA  –  Edit everything here
+══════════════════════════════════════════ -->
 <script>
-// ─────────────────────────────────────────────────────────────────
-//  DATA  —  Edit this object to update your profile page
-// ─────────────────────────────────────────────────────────────────
-var DATA = {
-  personal: {
-    name: "Sumankumar Akhileshwar Singh",
-    title: "Technical Project & Service Delivery Leader",
-    subtitle: "Cloud | SaaS | AI | BCDR | Compliance | DevOps",
-    linkedin: "https://www.linkedin.com/in/sumankumarsingh1/",
-    credly: "https://www.credly.com/users/sumankumar-akhileshwar-singh"
-  },
+const DATA = {
 
-  summary: "Technology delivery professional with experience in managing and supporting IT solutions across cloud, infrastructure, and software engineering environments. Proven ability to drive service delivery, transformation initiatives, and system integration in enterprise settings. Hands-on exposure to automation and AI/ML (GenAI, LLM, RAG).",
+  name: "Sumankumar Singh",
 
-  coreSkills: [
-    "IT Project Management", "IT Service Delivery Management", "Agile Scrum", "DevOps", "ITIL",
-    "Governance & Risk Management", "ISO 27001 / ISO 42001", "BCDR & Service Continuity",
-    "Cloud Infrastructure", "AI/ML (LLM, RAG)", "Python, Java, Node.js", "REST APIs"
+  contact: [
+    { label: "📞", value: "+91 9823240624", href: "tel:+919823240624" },
+    { label: "📧", value: "sumankumarsingh1@gmail.com", href: "mailto:sumankumarsingh1@gmail.com" },
+    { label: "📍", value: "Pune, India" },
+    { label: "LinkedIn", value: "linkedin.com/in/sumankumarsingh1", href: "https://www.linkedin.com/in/sumankumarsingh1/" },
+    { label: "Credly", value: "Badges", href: "https://www.credly.com/users/sumankumar-akhileshwar-singh/badges#credly" }
+  ],
+
+  certifications: [
+    "PMP","OCI AI & GenAI","ISO 27001 Lead Auditor","GCP Data Engineer","GCP Architect",
+    "Azure Architect","AWS Architect","IBM Watson","Agile SCRUM","SIAM","VeriSM",
+    "TOGAF 9","PRINCE2 Practitioner","ITIL V3 Expert","CBCI 7.0 training",
+    "AIGP training","Scaler Academy","Multiple IT Trainings & Workshops"
+  ],
+
+  about: "Experienced technology professional with 20+ years of experience across IT service delivery, project management, cloud, software engineering, and enterprise systems. Proven ability to lead cross-functional teams, drive large-scale transformation initiatives, and improve operational efficiency through automation and modern technologies. Strong background in BCDR, governance, and compliance, with growing focus on AI/ML, LLMs, and RAG-based solutions.",
+
+  objective: [
+    "Technical Project Manager driving end-to-end delivery",
+    "Service Delivery Manager ensuring reliability, SLA adherence, and governance",
+    "BCDR / Risk & Compliance Leader driving resilience, audit readiness, and regulatory initiatives",
+    "Technical Consultant enabling scalable, cloud-native, and AI-driven solutions"
+  ],
+
+  managementSkills: [
+    "IT Project & Program Management",
+    "Service Delivery & SLA Management",
+    "Stakeholder & Client Management",
+    "Cross-functional Team Leadership (25+ resources)",
+    "Agile Scrum & DevOps Practices",
+    "Risk, Governance & Compliance (ISO, BCDR)",
+    "Resource Planning & Hiring",
+    "Transition & Transformation Management",
+    "Incident, Problem, Change Management (ITIL)"
+  ],
+
+  technicalSkills: [
+    { area: "Cloud",        detail: "AWS, Azure, GCP, IBM Cloud, OCI, SaaS" },
+    { area: "Programming",  detail: "Python, Java, Node.js" },
+    { area: "Web & APIs",   detail: "REST APIs, Microservices" },
+    { area: "DevOps",       detail: "GitHub, Jenkins, CI/CD" },
+    { area: "Containers",   detail: "Docker, Kubernetes" },
+    { area: "Data",         detail: "SQL Server, Oracle, PostgreSQL, MongoDB" },
+    { area: "Messaging",    detail: "Kafka" },
+    { area: "AI/ML",        detail: "LLM, RAG, LangChain, LangGraph, Prompt Engineering" },
+    { area: "Observability",detail: "Prometheus, Grafana" },
+    { area: "Telecom",      detail: "5G SBA, O-RAN, VoIP, MPLS" },
+    { area: "BCDR",         detail: "ISO 27001, ISO 22301, ISO 42001, NIST" }
   ],
 
   experience: [
     {
       title: "Principal Product Strategy Manager",
       company: "Oracle India Pvt. Ltd.",
-      from: "Feb 2023", to: "Present",
-      responsibilities: [
-        "SME for SaaS BCDR strategy and service continuity across global environments",
-        "Managed BIA and risk remediation ensuring audit readiness",
-        "Led onboarding of SaaS services into enterprise resiliency frameworks",
-        "Conducted DR exercises and compliance activities",
-        "Coordinated governance across incident, problem, change, and release management",
-        "Built automation dashboards using Python and JIRA APIs",
-        "Developed DR Exercise Portal PoC using Node.js and AI/LLM approaches"
-      ],
-      technologies: ["JIRA", "Confluence", "Python", "REST APIs", "AI/ML", "LLM", "RAG", "LangChain"]
+      dates: "Feb 2023 – Present",
+      bullets: [
+        "SME for SaaS BCDR strategy and service continuity",
+        "Led BCDR governance for 15+ SaaS services",
+        "Managed BIA, risk remediation, and audit readiness",
+        "Facilitated DR tabletop and annual Tier-1 DR exercises",
+        "Built automation tools (Python + JIRA APIs dashboards)",
+        "Developed AI/LLM PoC for DR knowledge retrieval (RAG)",
+        "Collaborated with engineering, operations, compliance, and product teams"
+      ]
     },
     {
       title: "Project Manager",
-      company: "Calsoft",
-      from: "Jan 2021", to: "Jan 2023",
-      responsibilities: [
-        "Managed Agile software delivery across cloud and distributed systems",
-        "Coordinated 25+ resources across multiple teams",
-        "Led micro frontend and backend development projects",
-        "Managed Kubernetes-based deployments and cloud-native solutions",
-        "Ensured observability, monitoring, and system reliability",
-        "Handled client coordination, onboarding, and delivery tracking"
-      ],
-      technologies: ["Angular", "React", "Java", "Python", "Node.js", "Kubernetes", "Kafka", "REST APIs"]
+      company: "Calsoft Pvt. Ltd.",
+      dates: "Jan 2021 – Jan 2023",
+      bullets: [
+        "Managed Agile/DevOps projects across telecom and cloud domains",
+        "Led multiple teams (25+ resources across projects)",
+        "Acted as Telecom SME for 5G, O-RAN, and fiber projects",
+        "Managed client engagement, hiring, and delivery planning",
+        "Contributed as developer in MLOps, PowerEdge automation, and API Gateway"
+      ]
     },
     {
-      title: "Advisor - Solution Architect",
-      company: "DXC Technology",
-      from: "Sep 2016", to: "Jun 2020",
-      responsibilities: [
-        "Led delivery and transformation of enterprise applications",
-        "Managed Agile projects including planning, execution, and tracking",
-        "Mentored development teams and guided architecture decisions",
-        "Collaborated with stakeholders for requirements and solution design",
-        "Managed backlog, stories, and RAID logs using JIRA"
-      ],
-      technologies: ["Azure", "AWS", "IBM Cloud", "Node.js", ".NET", "Spark", "SQL Server"]
+      title: "Advisor Solution Architect",
+      company: "DXC Technology (Previously HPE)",
+      dates: "Sep 2016 – Jun 2020",
+      bullets: [
+        "Service Delivery Lead for enterprise applications",
+        "Led distributed teams for development and transformation projects",
+        "Designed AI/chatbot/voice bot solutions across Azure, AWS, IBM",
+        "Managed stakeholder communication and delivery execution",
+        "Mentored teams and drove PoCs and innovation initiatives"
+      ]
     },
     {
       title: "Voice Application Specialist",
-      company: "Ventura / Capita ITES",
-      from: "Jan 2013", to: "Sep 2016",
-      responsibilities: [
-        "SME for Avaya contact center platforms",
-        "Managed ITIL processes (Incident, Problem, Change)",
-        "Supported L2/L3 operations and service delivery",
-        "Led knowledge base and service improvement initiatives",
-        "Supported transition and steady-state operations"
-      ],
-      technologies: ["Avaya ACD", "IVR", "Contact Center Systems", "IR Prognosis", "MS Dynamics CRM"]
+      company: "Ventura India Pvt Ltd (Capita ITES)",
+      dates: "Jan 2013 – Sep 2016",
+      bullets: [
+        "SME for Avaya contact center solutions",
+        "Led onboarding of L2 Voice Command Center support team",
+        "Managed ITIL processes and SLA-driven service delivery",
+        "Mentored engineers and built support processes",
+        "Supported upgrades, patching, and monitoring of voice infrastructure"
+      ]
     },
     {
       title: "Principal Software Engineer",
       company: "Avaya India Pvt. Ltd.",
-      from: "Aug 2008", to: "Dec 2012",
-      responsibilities: [
+      dates: "Aug 2008 – Dec 2012",
+      bullets: [
         "DDE for Dialer and IVR products",
-        "Performed defect diagnostics and RCA",
-        "Handled escalations and production issues",
-        "Collaborated with engineering and QA teams"
-      ],
-      technologies: ["Avaya Proactive Contact", "Experience Portal"]
+        "SME for troubleshooting and defect diagnostics",
+        "Performed RCA and handled escalations",
+        "Collaborated with engineering and QA teams",
+        "Mentored engineers and improved support efficiency"
+      ]
     },
     {
-      title: "Senior Engineer - Voice Technology",
-      company: "EXL Services",
-      from: "May 2007", to: "Jul 2008",
-      responsibilities: [
-        "SME for dialer and voice systems",
-        "Supported multi-site infrastructure and upgrades",
-        "Worked on application development (VB, SQL Server)",
-        "Developed Telecom Billing System",
-        "Implemented Cisco VoIP across locations"
-      ],
-      technologies: ["Dialers", "Avaya CM", "Cisco Call Manager", "Verint Recorder"]
+      title: "Senior Engineer",
+      company: "EXL Services.com",
+      dates: "May 2007 – Jul 2008",
+      bullets: [
+        "Voice Technology SME for dialer and contact center systems",
+        "Led infrastructure upgrades and system integrations",
+        "Developed telecom billing reconciliation system (VB + SQL)",
+        "Managed vendor coordination and telecom operations",
+        "Practiced ITIL incident management"
+      ]
     },
     {
-      title: "Engineer - Technology",
-      company: "HCL Technologies",
-      from: "Feb 2004", to: "Jan 2007",
-      responsibilities: [
-        "Supported dialer and ACD systems for global operations",
-        "Managed reporting systems and SQL data processing",
-        "Maintained ASP-based intranet tools",
-        "Supported incident resolution and operations"
-      ],
-      technologies: ["Nortel Meridian", "Davox Dialer", "SQL Server", "ASP"]
+      title: "MIS & WFM Team Lead",
+      company: "Tech Mahindra Ltd.",
+      dates: "Mar 2007 – May 2007",
+      bullets: [
+        "Developed ticket classification and routing system",
+        "Automated workload distribution for 80+ engineers",
+        "Built dashboards and MIS reporting systems",
+        "Implemented WFM features (forecasting, scheduling)",
+        "Delivered core system in 16 days"
+      ]
+    },
+    {
+      title: "System Engineer",
+      company: "HCL Technologies Ltd.",
+      dates: "Aug 2004 – Jan 2007",
+      bullets: [
+        "Developed 50+ MIS web applications (ASP + SQL Server)",
+        "Generated 250+ automated reports daily",
+        "Integrated dialer, CRM, and inbound systems",
+        "Managed IIS, SQL Server, Active Directory",
+        "Supported telecom infrastructure and reporting systems"
+      ]
+    },
+    {
+      title: "System Engineer",
+      company: "Vikram Ispat (Grasim Industries Ltd.)",
+      dates: "Aug 2000 – Jan 2004",
+      bullets: [
+        "Managed enterprise IT infrastructure (UNIX, Novell, Windows)",
+        "Supported SCADA and industrial control systems",
+        "Maintained 24×7 plant operations systems",
+        "Enhanced business applications (FoxPro, VB)",
+        "Handled networking and server administration"
+      ]
     }
   ],
 
-  certifications: {
-    professional: ["PMP", "ITIL V3 Expert", "PRINCE2 Practitioner", "TOGAF 9", "ISO 27001 Lead Auditor"],
-    cloudAndAI: ["AWS Solution Architect", "Azure Architect Expert", "Google Cloud Architect & Data Engineer", "Oracle Generative AI & AI Foundation"]
-  },
-
-  technicalSkills: {
-    "Programming": ["Python", "Java", "Node.js"],
-    "Relational Databases": ["Oracle", "MySQL", "PostgreSQL", "SQLite"],
-    "NoSQL & Streaming": ["MongoDB", "KiteDB", "Apache Kafka"],
-    "Cloud Platforms": ["AWS", "Azure", "GCP", "IBM Cloud", "Oracle Cloud (OCI)"],
-    "Containers & IaC": ["Docker", "Kubernetes", "Terraform"],
-    "DevOps & CI/CD": ["GitHub", "Jenkins"],
-    "AI / ML": ["Prompt Engineering", "LLMs", "RAG", "Ollama", "LangChain", "LangGraph", "MCP", "Jupyter Notebook", "Regression", "Classification", "Clustering", "Matplotlib"]
-  },
-
   education: [
-    { degree: "B.E. Electronics & Telecommunication", institution: "North Maharashtra University" },
-    { degree: "PG Diploma - Computer Software Systems", institution: "" }
+    { degree: "B.E. Electronics & Telecommunication", institution: "North Maharashtra University", year: "1991–1996" },
+    { degree: "Advance Diploma in Computer Software System Analysis & Applications", institution: "Board of Technical Education", year: "1996–1998" },
+    { degree: "Diploma in E-Biz", institution: "Bostons Computer Institute", year: "Jan 2000 – Jun 2000" }
   ],
 
   projects: [
-    {
-      title: "BCDR Governance, Compliance & DR Exercise Program",
-      company: "Oracle India Pvt. Ltd.", client: "Internal (Oracle SaaS Services)",
-      from: "Feb 2023", to: "Present",
-      details: "Led BCDR governance and compliance for 15+ Oracle SaaS services. Facilitated DR tabletop exercises, coordinated annual DR exercises for Tier-1 services, and drove remediation and continuous improvement initiatives.",
-      roles: ["Program Manager", "SME"],
-      requirement: "Ensure BCDR compliance, validate recovery readiness, and improve resilience of critical SaaS services",
-      solution: "Led governance program, conducted DR exercises, identified risks, and drove remediation",
-      technologies: ["BCDR Frameworks (ISO 22301, ISO 27001)", "Risk Management", "DR Tools", "SaaS Platforms"],
-      teamSize: "15+ (Cross-functional)"
-    },
-    {
-      title: "DR Exercise Portal with AI/LLM PoC",
-      company: "Oracle India Pvt. Ltd.", client: "Internal (BCDR & Service Continuity)",
-      from: "Feb 2023", to: "Present",
-      details: "Built a PoC for a DR Exercise Portal using LLMs and RAG for intelligent retrieval of DR procedures. Implemented vector embeddings for DR documents enabling contextual search and query-based retrieval.",
-      roles: ["Developer"],
-      requirement: "Improve accessibility of DR procedures and explore AI-based knowledge retrieval",
-      solution: "Built PoC leveraging LLMs, RAG, and vector embeddings for intelligent document retrieval",
-      technologies: ["LLM", "RAG", "Vector Embeddings", "Python", "Node.js"],
-      teamSize: "2"
-    },
-    {
-      title: "Release Management Tracking Dashboard",
-      company: "Oracle India Pvt. Ltd.", client: "Internal (SaaS Operations)",
-      from: "Feb 2023", to: "Present",
-      details: "Developed an automated release tracking dashboard integrating JIRA APIs via Python to extract real-time data and generate interactive HTML/JS dashboards, replacing manual status tracking.",
-      roles: ["Developer"],
-      requirement: "Automate release tracking and provide real-time visibility into release status",
-      solution: "Built Python-based data extraction and dashboard generation system integrated with JIRA",
-      technologies: ["Python", "JIRA APIs", "HTML", "JavaScript"],
-      teamSize: "1"
-    },
-    {
-      title: "MLflow Deployment & Automation on Kubernetes",
-      company: "Calsoft", client: "Enterprise / Internal",
-      from: "Jan 2021", to: "Jan 2023",
-      details: "Developed automation for provisioning MLflow instances on Kubernetes. Built REST APIs in Python and shell scripts for deployment across K8s nodes, supporting MLOps initiatives.",
-      roles: ["Developer"],
-      requirement: "Enable automated deployment of MLflow instances on Kubernetes",
-      solution: "Developed REST APIs and automation scripts for provisioning and managing MLflow environments",
-      technologies: ["Python", "REST APIs", "Kubernetes", "Shell Scripting", "MLflow"],
-      teamSize: "4"
-    },
-    {
-      title: "MuleSoft API Gateway Custom Policy Development",
-      company: "Calsoft", client: "Enterprise Client",
-      from: "Jan 2021", to: "Jan 2023",
-      details: "Developed custom security and control policies for MuleSoft API Gateway, working with solution architects to implement policy logic for secure and controlled API access.",
-      roles: ["Developer"],
-      requirement: "Enhance API Gateway security and policy enforcement",
-      solution: "Developed and implemented custom policies for API Gateway",
-      technologies: ["MuleSoft API Gateway"],
-      teamSize: "2-3"
-    },
-    {
-      title: "Voice Bot - Amazon Connect",
-      company: "DXC Technology", client: "Enterprise",
-      from: "Sep 2016", to: "Jun 2020",
-      details: "Designed and delivered a voice bot solution using Amazon Connect, Lex, and Lambda for automated customer interactions.",
-      roles: ["Solution Architect"],
-      requirement: "Automate customer voice interactions",
-      solution: "Built serverless voice bot on AWS using Connect, Lex, and Lambda",
-      technologies: ["Amazon Connect", "Amazon Lex", "Lambda", "AWS"],
-      teamSize: "5"
-    },
-    {
-      title: "NLU Data Corpus Pipeline",
-      company: "DXC Technology", client: "Enterprise",
-      from: "Sep 2016", to: "Jun 2020",
-      details: "Built a data pipeline for NLU corpus creation and processing using Spark and Scala on Azure and AWS cloud platforms.",
-      roles: ["Solution Architect", "Project Manager"],
-      requirement: "Build scalable NLU training data pipeline",
-      solution: "Designed Spark-based distributed processing pipeline on cloud infrastructure",
-      technologies: ["Spark", "Scala", "Azure", "AWS"],
-      teamSize: "8"
-    },
-    {
-      title: "Resort Management & Billing Web Application",
-      company: "Boston Computer Institute", client: "Academic / Training Project",
-      from: "Mar 2000", to: "May 2000",
-      details: "Developed a web-based resort management system for guest operations, room occupancy tracking, kitchen/laundry orders, and dynamic billing with role-based access control.",
-      roles: ["Developer", "Architect"],
-      requirement: "Manage room occupancy, guest services, and billing with controlled access",
-      solution: "Designed web application with modules for room occupancy tracking, service management, and billing",
-      technologies: ["HTML", "JavaScript", "Classic ASP", "MS Access", "ADO", "Java Servlets"],
-      teamSize: "1-2"
-    },
-    {
-      title: "Employee Recruitment Management System",
-      company: "New Generation Pvt. Ltd.", client: "GAIL - Usar Plant",
-      from: "1998", to: "1998",
-      details: "Developed a recruitment system to process 2500+ applications for ITI technicians and supervisors. Designed forms, trained data entry operators, and enabled structured interview evaluation recording.",
-      roles: ["Developer", "Coordinator", "Trainer"],
-      requirement: "Efficiently process large-scale recruitment applications and interview data",
-      solution: "Designed database-driven system with structured forms and reporting",
-      technologies: ["Lotus Approach"],
-      teamSize: "5-10"
-    },
-    {
-      title: "Inventory Aging & Cost Optimization System",
-      company: "New Generation Pvt. Ltd.", client: "Vikram Ispat (Grasim Industries), Revdanda",
-      from: "1998", to: "1998",
-      details: "Developed an inventory aging system with a cost analysis algorithm evaluating purchase cost, maintenance cost, and depreciation trends to support strategic asset lifecycle decisions.",
-      roles: ["Developer", "Architect"],
-      requirement: "Analyze inventory cost trends and optimize asset lifecycle decisions",
-      solution: "Designed algorithm-based system integrating purchase and maintenance data",
-      technologies: ["Lotus Approach"],
-      teamSize: "3-5"
-    },
-    {
-      title: "Integrated Inventory, Payroll & Billing System",
-      company: "Bright Computer Center", client: "Shahada Soot Girni",
-      from: "1994", to: "1995",
-      details: "Built an integrated enterprise system covering billing, payroll, inventory, and accounting with hardware integration via IO port for weighing scale machines. Deployed on Novell LAN.",
-      roles: ["Developer", "Integration Engineer"],
-      requirement: "Integrate weighing machine data and automate enterprise operations",
-      solution: "Built data capture mechanism and integrated with FoxPro-based systems",
-      technologies: ["FoxPro", "IO Port Integration", "Novell NetWare LAN"],
-      teamSize: "3-5"
-    },
-    {
-      title: "Billing & Invoicing System",
-      company: "Bright Computer Center", client: "Chajjed Industries",
-      from: "Feb 1992", to: "Jun 1995",
-      details: "Developed a billing and invoicing system automating invoice generation, record management, and basic reporting for small-scale industry operations.",
-      roles: ["Developer"],
-      requirement: "Automate billing and record-keeping processes",
-      solution: "Designed and developed database-driven billing application",
-      technologies: ["dBase III Plus", "FoxBase"],
-      teamSize: "1"
-    }
+    "BCDR Governance & DR Exercise Program (Oracle)",
+    "DR Exercise Portal – AI/LLM RAG PoC (Oracle)",
+    "Release Management Dashboard Automation (Oracle)",
+    "O-RAN Simulator (Calsoft)",
+    "5G SBA Migration & Orchestration (Calsoft)",
+    "Fiber Network Project (Calsoft)",
+    "MLflow Automation on Kubernetes (Calsoft)",
+    "PowerEdge Automation (Calsoft)",
+    "MuleSoft API Gateway Policies (Calsoft)",
+    "Voice Bot – Amazon Connect (DXC)",
+    "Chatbot – Azure LUIS / IBM Watson (DXC)"
   ]
 };
 
-// ─────────────────────────────────────────────────────────────────
-//  RENDER FUNCTIONS
-// ─────────────────────────────────────────────────────────────────
+// ══════════════════════════════════════════
+//  RENDERER  –  No need to edit below here
+// ══════════════════════════════════════════
 function el(tag, cls, html) {
-  var e = document.createElement(tag);
+  const e = document.createElement(tag);
   if (cls) e.className = cls;
-  if (html) e.innerHTML = html;
+  if (html !== undefined) e.innerHTML = html;
   return e;
 }
 
-function pills(arr) {
-  return arr.map(function(t) { return '<span class="tech-pill">' + t + '</span>'; }).join('');
+function section(title) {
+  const s = el('div', 'section');
+  s.appendChild(el('div', 'section-title', title));
+  return s;
 }
 
-function render(d) {
-  var p = d.personal;
+function render() {
+  const root = document.getElementById('resume');
 
-  // Sidebar
-  document.getElementById('avatar').textContent = p.name.charAt(0);
-  document.getElementById('sidebar-name').textContent = p.name;
-  document.getElementById('sidebar-role').textContent = p.subtitle;
-  document.getElementById('sidebar-links').innerHTML =
-    '<a href="' + p.linkedin + '" target="_blank" rel="noopener">' +
-    '<svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>' +
-    ' LinkedIn</a>' +
-    '<a href="' + p.credly + '" target="_blank" rel="noopener">' +
-    '<svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>' +
-    ' Credly Badges</a>';
-
-  // Hero
-  var parts = p.name.split(' ');
-  var last = parts.pop();
-  document.getElementById('hero-name').innerHTML = parts.join(' ') + ' <span>' + last + '</span>';
-  document.getElementById('hero-title').textContent = p.title + '  ·  ' + p.subtitle;
-  document.getElementById('hero-summary').textContent = d.summary;
-
-  // Core Skills
-  var sg = document.getElementById('skills-grid');
-  d.coreSkills.forEach(function(s) {
-    sg.appendChild(el('span', 'skill-tag', s));
+  // Header
+  const hdr = el('div', 'header');
+  hdr.appendChild(el('h1', '', DATA.name));
+  const cr = el('div', 'contact-row');
+  DATA.contact.forEach(c => {
+    const span = el('span', '');
+    if (c.href) {
+      span.innerHTML = `${c.label} <a href="${c.href}">${c.value}</a>`;
+    } else {
+      span.textContent = `${c.label} ${c.value}`;
+    }
+    cr.appendChild(span);
   });
-
-  // Experience
-  var expWrap = document.getElementById('exp-list');
-  d.experience.forEach(function(exp) {
-    var div = el('div', 'exp-item');
-    div.innerHTML =
-      '<div>' +
-        '<div class="exp-period">' + exp.from + '<br>&#8594; ' + exp.to + '</div>' +
-        '<div class="exp-company">' + exp.company + '</div>' +
-      '</div>' +
-      '<div>' +
-        '<div class="exp-title">' + exp.title + '</div>' +
-        '<ul class="resp-list">' +
-          exp.responsibilities.map(function(r) { return '<li>' + r + '</li>'; }).join('') +
-        '</ul>' +
-        '<div class="tech-pills">' + pills(exp.technologies) + '</div>' +
-      '</div>';
-    expWrap.appendChild(div);
-  });
-
-  // Projects
-  var pg = document.getElementById('project-grid');
-  d.projects.forEach(function(proj) {
-    var shown = proj.technologies.slice(0, 4);
-    var extra = proj.technologies.length > 4 ? proj.technologies.length - 4 : 0;
-    var card = el('div', 'project-card');
-    card.innerHTML =
-      '<div class="project-period">' + proj.from + ' &#8594; ' + proj.to + '</div>' +
-      '<div class="project-title">' + proj.title + '</div>' +
-      '<div class="project-company">' + proj.company + '</div>' +
-      '<div class="project-desc">' + proj.details + '</div>' +
-      '<div class="tech-pills">' + pills(shown) + (extra ? '<span class="tech-pill">+' + extra + '</span>' : '') + '</div>';
-    card.onclick = function() { openModal(proj); };
-    pg.appendChild(card);
-  });
+  hdr.appendChild(cr);
+  root.appendChild(hdr);
 
   // Certifications
-  document.getElementById('cert-grid').innerHTML =
-    '<div class="cert-group"><h3>Professional</h3><ul class="cert-list">' +
-      d.certifications.professional.map(function(c) { return '<li>' + c + '</li>'; }).join('') +
-    '</ul></div>' +
-    '<div class="cert-group"><h3>Cloud & AI</h3><ul class="cert-list">' +
-      d.certifications.cloudAndAI.map(function(c) { return '<li>' + c + '</li>'; }).join('') +
-    '</ul></div>';
+  const certSec = section('Certifications & Training');
+  const tags = el('div', 'tags');
+  DATA.certifications.forEach(c => tags.appendChild(el('span', 'tag', c)));
+  certSec.appendChild(tags);
+  root.appendChild(certSec);
 
-  // Tech Stack
-  var ts = document.getElementById('tech-stack');
-  Object.keys(d.technicalSkills).forEach(function(label) {
-    var sec = el('div', 'tech-section');
-    sec.innerHTML = '<h3>' + label + '</h3><div class="skills-grid">' +
-      d.technicalSkills[label].map(function(i) { return '<span class="skill-tag">' + i + '</span>'; }).join('') +
-      '</div>';
-    ts.appendChild(sec);
+  // About
+  const aboutSec = section('Professional Summary');
+  aboutSec.appendChild(el('p', 'prose', DATA.about));
+  root.appendChild(aboutSec);
+
+  // Objective
+  const objSec = section('Objective – Open To');
+  const objUl = el('ul', '');
+  objUl.style.cssText = 'margin-left:18px;color:#444;font-size:13px;';
+  DATA.objective.forEach(o => objUl.appendChild(el('li', '', o)));
+  objSec.appendChild(objUl);
+  root.appendChild(objSec);
+
+  // Management Skills
+  const mgmtSec = section('Management Skills');
+  const mgmtGrid = el('div', '');
+  mgmtGrid.style.cssText = 'display:grid;grid-template-columns:repeat(2,1fr);gap:2px 24px;font-size:13px;color:#444;';
+  DATA.managementSkills.forEach(s => {
+    const li = el('div', '');
+    li.innerHTML = `• ${s}`;
+    mgmtGrid.appendChild(li);
   });
+  mgmtSec.appendChild(mgmtGrid);
+  root.appendChild(mgmtSec);
+
+  // Technical Skills
+  const techSec = section('Technical Skills');
+  const grid = el('div', 'skills-grid');
+  DATA.technicalSkills.forEach(s => {
+    grid.appendChild(el('div', 'skill-label', s.area));
+    grid.appendChild(el('div', 'skill-value', s.detail));
+  });
+  techSec.appendChild(grid);
+  root.appendChild(techSec);
+
+  // Experience
+  const expSec = section('Professional Experience');
+  DATA.experience.forEach(job => {
+    const jd = el('div', 'job');
+    const jh = el('div', 'job-header');
+    const left = el('div', '');
+    left.appendChild(el('div', 'job-title', job.title));
+    left.appendChild(el('div', 'job-company', job.company));
+    jh.appendChild(left);
+    jh.appendChild(el('div', 'job-dates', job.dates));
+    jd.appendChild(jh);
+    const ul = el('ul', '');
+    job.bullets.forEach(b => ul.appendChild(el('li', '', b)));
+    jd.appendChild(ul);
+    expSec.appendChild(jd);
+  });
+  root.appendChild(expSec);
 
   // Education
-  var eduWrap = document.getElementById('edu-list');
-  d.education.forEach(function(e) {
-    eduWrap.appendChild(el('div', 'edu-item',
-      '<div class="edu-degree">' + e.degree + '</div>' +
-      (e.institution ? '<div class="edu-inst">' + e.institution + '</div>' : '')
-    ));
+  const eduSec = section('Education');
+  DATA.education.forEach(e => {
+    const div = el('div', 'edu-item');
+    div.appendChild(el('div', 'edu-degree', e.degree));
+    div.appendChild(el('div', 'edu-meta', `${e.institution} &nbsp;|&nbsp; ${e.year}`));
+    eduSec.appendChild(div);
   });
+  root.appendChild(eduSec);
 
-  setupScrollSpy();
+  // Projects
+  const projSec = section('Key Projects (Last 3 Employers)');
+  const projList = el('ul', 'project-list');
+  DATA.projects.forEach(p => projList.appendChild(el('li', '', p)));
+  projSec.appendChild(projList);
+  root.appendChild(projSec);
 }
 
-function openModal(proj) {
-  document.getElementById('modal-body').innerHTML =
-    '<div class="modal-period">' + proj.from + ' &#8594; ' + proj.to + '</div>' +
-    '<div class="modal-title">' + proj.title + '</div>' +
-    '<div class="modal-client">' + proj.company + ' &middot; ' + proj.client + '</div>' +
-    '<div class="modal-section"><h4>Overview</h4><p>' + proj.details + '</p></div>' +
-    '<div class="modal-section"><h4>Requirement</h4><p>' + proj.requirement + '</p></div>' +
-    '<div class="modal-section"><h4>Solution</h4><p>' + proj.solution + '</p></div>' +
-    '<div class="modal-section"><h4>Roles</h4><div class="modal-roles">' +
-      proj.roles.map(function(r) { return '<span class="modal-role">' + r + '</span>'; }).join('') +
-    '</div></div>' +
-    '<div class="modal-section"><h4>Technologies</h4><div class="tech-pills">' + pills(proj.technologies) + '</div></div>' +
-    '<div class="modal-section"><h4>Team Size</h4><p>' + proj.teamSize + '</p></div>';
-  document.getElementById('modal-overlay').classList.add('open');
-}
-
-document.getElementById('modal-close').onclick = function() {
-  document.getElementById('modal-overlay').classList.remove('open');
-};
-document.getElementById('modal-overlay').onclick = function(e) {
-  if (e.target === this) this.classList.remove('open');
-};
-
-function setupScrollSpy() {
-  var sections = document.querySelectorAll('section[id], div.hero[id]');
-  var links = document.querySelectorAll('nav a');
-  var observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        links.forEach(function(a) { a.classList.remove('active'); });
-        var active = document.querySelector('nav a[href="#' + entry.target.id + '"]');
-        if (active) active.classList.add('active');
-      }
-    });
-  }, { threshold: 0.25 });
-  sections.forEach(function(s) { observer.observe(s); });
-}
-
-render(DATA);
+render();
 </script>
 </body>
 </html>
