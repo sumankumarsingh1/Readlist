@@ -80,3 +80,13 @@ You can deploy cloud resources in multiple ways: cloud, on-premises, and hybrid.
 
   Multi-cloud deployments can also be considered hybrid deployments
 
+### Benefits of the AWS Cloud
+
+**Objective**: Describe the six key benefits of cloud computing.
+
+**Video**:
+
+* Benefit #1: Ability to pay-as-you-go - Trade fixed expenses for variable expenses.
+
+
+
