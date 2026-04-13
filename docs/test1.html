@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Property Consultant</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+<!-- CONFIG (EDIT HERE) -->
+<script>
+const CONFIG = {
+  whatsappNumber: "919999999999", // change to your number
+  currentProjects: [
+    { name: "Property Site #89", images: ["plot11.png", "plot2.png", "plot3.jpg", "plot4.jpg"] },
+    { name: "Property Site #91", images: ["plot14.png", "plot3.png", "plot2.jpg", "plot1.jpg"] },
+  ],
+  pastProjects: [
+    { name: "Porperty Site #85", images: ["img6.jpg", "img7.jpg"] }
+  ],
+  testimonials: [
+    { name: "Rahul", text: "Great experience working with this consultant!" },
+    { name: "Priya", text: "Highly professional and reliable." }
+  ]
+};
+</script>
+
+<!-- HERO -->
+<section class="bg-white py-16 text-center">
+  <h1 class="text-4xl font-bold">Your Trusted Property Consultant</h1>
+  <p class="mt-4 text-gray-600">Find your dream property with ease</p>
+  <button onclick="scrollToEnquiry()" class="mt-6 bg-blue-600 text-white px-6 py-3 rounded-2xl shadow">Send Enquiry</button>
+</section>
+
+<!-- PROJECT SECTION TEMPLATE -->
+<section class="py-12 px-6">
+  <h2 class="text-2xl font-semibold mb-6">Current Projects</h2>
+  <div id="currentProjects" class="grid md:grid-cols-2 gap-6"></div>
+</section>
+
+<section class="py-12 px-6 bg-white">
+  <h2 class="text-2xl font-semibold mb-6">Past Projects</h2>
+  <div id="pastProjects" class="grid md:grid-cols-2 gap-6"></div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="py-12 px-6">
+  <h2 class="text-2xl font-semibold mb-6">Testimonials</h2>
+  <div id="testimonials" class="grid md:grid-cols-2 gap-6"></div>
+</section>
+
+<!-- ENQUIRY -->
+<section id="enquiry" class="py-12 px-6 bg-white">
+  <h2 class="text-2xl font-semibold mb-6">Send Enquiry</h2>
+  <form onsubmit="sendWhatsApp(event)" class="max-w-md space-y-4">
+    <input id="name" type="text" placeholder="Your Name" class="w-full border p-3 rounded" required />
+    <input id="phone" type="text" placeholder="Phone Number" class="w-full border p-3 rounded" required />
+    <textarea id="message" placeholder="Your Message" class="w-full border p-3 rounded"></textarea>
+    <button type="submit" class="bg-green-600 text-white px-6 py-3 rounded-2xl">Send on WhatsApp</button>
+  </form>
+</section>
+
+<script>
+function createCarousel(images) {
+  let index = 0;
+  return `
+    <div class="relative">
+      <img src="${images[0]}" class="w-full h-48 object-cover rounded" id="carousel-${Math.random()}" />
+      <div class="flex justify-between mt-2">
+        <button onclick="this.parentElement.parentElement.querySelector('img').src='${images[0]}'">1</button>
+        ${images.map((img, i) => `<button onclick=\"this.parentElement.parentElement.querySelector('img').src='${img}'\">${i+1}</button>`).join('')}
+      </div>
+    </div>`;
+}
+
+function renderProjects(containerId, projects) {
+  const container = document.getElementById(containerId);
+  container.innerHTML = projects.map(p => `
+    <div class="bg-white p-4 rounded-2xl shadow">
+      <h3 class="text-lg font-bold mb-2">${p.name}</h3>
+      ${createCarousel(p.images)}
+    </div>
+  `).join('');
+}
+
+function renderTestimonials() {
+  const container = document.getElementById('testimonials');
+  container.innerHTML = CONFIG.testimonials.map(t => `
+    <div class="bg-white p-4 rounded-2xl shadow">
+      <p>"${t.text}"</p>
+      <p class="mt-2 font-semibold">- ${t.name}</p>
+    </div>
+  `).join('');
+}
+
+function sendWhatsApp(e) {
+  e.preventDefault();
+  const name = document.getElementById('name').value;
+  const phone = document.getElementById('phone').value;
+  const message = document.getElementById('message').value;
+
+  const text = `Name: ${name}%0APhone: ${phone}%0AMessage: ${message}`;
+  window.open(`https://wa.me/${CONFIG.whatsappNumber}?text=${text}`, '_blank');
+}
+
+function scrollToEnquiry() {
+  document.getElementById('enquiry').scrollIntoView({ behavior: 'smooth' });
+}
+
+renderProjects('currentProjects', CONFIG.currentProjects);
+renderProjects('pastProjects', CONFIG.pastProjects);
+renderTestimonials();
+</script>
+
+</body>
+</html>
