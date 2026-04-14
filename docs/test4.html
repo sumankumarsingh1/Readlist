@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Property Consultant</title>
+  <title>Big Dream Property Consultant</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-gradient-to-br from-slate-900 via-gray-900 to-black text-white">
 
 <!-- CONFIG (EDIT HERE) -->
 <script>
@@ -14,12 +14,13 @@ const CONFIG = {
   whatsappNumber: "+919525745198",
   currentProjects: [
     { name: "Bit Dream Home - Parmanandpur - Patna", images: ["ritesh1/plot1.jpg", "ritesh1/plot2.jpg", "ritesh1/plot3.jpg", "ritesh1/plot4.jpg", "ritesh1/plot5.jpg", "ritesh1/plot6.jpg", "ritesh1/plot7.jpg", "ritesh1/plot8.jpg" ] },
+    { name: "Bit Dream Home - Parmanandpur - Patna", images: ["ritesh1/plot1.jpg", "ritesh1/plot2.jpg", "ritesh1/plot3.jpg", "ritesh1/plot4.jpg", "ritesh1/plot5.jpg", "ritesh1/plot6.jpg", "ritesh1/plot7.jpg", "ritesh1/plot8.jpg" ] },
   ]
 };
 </script>
 
 <!-- HERO -->
-<section class="bg-white py-16 text-center">
+<section class="py-20 text-center bg-gradient-to-r from-blue-900 via-purple-900 to-slate-900 text-white">
   <h1 class="text-4xl font-bold">Your Trusted Property Consultant</h1>
   <p class="mt-4 text-gray-600">Find your dream property with ease</p>
   <button onclick="scrollToEnquiry()" class="mt-6 bg-blue-600 text-white px-6 py-3 rounded-2xl shadow">Send Enquiry</button>
@@ -53,11 +54,11 @@ function createCarousel(images, id) {
   }, 3000);
 
   return `
-    <div class="relative bg-black rounded-xl overflow-hidden flex items-center justify-center" style="height:300px">
-      <img id="${id}" src="${images[0]}" class="max-h-full max-w-full object-contain" />
+    <div class="relative rounded-xl overflow-hidden">
+      <img id="${id}" src="${images[0]}" class="w-full h-[350px] object-cover" />
       
-      <button onclick="prevSlide('${id}', ${JSON.stringify(images)})" class="absolute left-2 bg-white px-3 py-1 rounded shadow">◀</button>
-      <button onclick="nextSlide('${id}', ${JSON.stringify(images)})" class="absolute right-2 bg-white px-3 py-1 rounded shadow">▶</button>
+      <button onclick="prevSlide('${id}', ${JSON.stringify(images)})" class="absolute left-3 top-1/2 -translate-y-1/2 bg-black/50 text-white px-3 py-1 rounded">◀</button>
+      <button onclick="nextSlide('${id}', ${JSON.stringify(images)})" class="absolute right-3 top-1/2 -translate-y-1/2 bg-black/50 text-white px-3 py-1 rounded">▶</button>
     </div>`;
 }
 
