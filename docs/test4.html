@@ -6,22 +6,14 @@
   <title>Property Consultant</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body  class="bg-gray-50 text-gray-800">
+<body class="bg-gray-50 text-gray-800">
 
 <!-- CONFIG (EDIT HERE) -->
 <script>
 const CONFIG = {
-  whatsappNumber: "+919525745198", // change to your number
+  whatsappNumber: "+919525745198",
   currentProjects: [
     { name: "Bit Dream Home - Parmanandpur - Patna", images: ["ritesh1/plot1.jpg", "ritesh1/plot2.jpg", "ritesh1/plot3.jpg", "ritesh1/plot4.jpg", "ritesh1/plot5.jpg", "ritesh1/plot6.jpg", "ritesh1/plot7.jpg", "ritesh1/plot8.jpg" ] },
-    { name: "Property Site #91", images: ["plot4.png", "plot3.png", "plot2.jpg", "plot1.jpg"] },
-  ],
-  pastProjects: [
-    { name: "Porperty Site #85", images: ["plot2.png", "plot3.png"] }
-  ],
-  testimonials: [
-    { name: "Rahul", text: "Great experience working with this consultant!" },
-    { name: "Priya", text: "Highly professional and reliable." }
   ]
 };
 </script>
@@ -33,21 +25,10 @@ const CONFIG = {
   <button onclick="scrollToEnquiry()" class="mt-6 bg-blue-600 text-white px-6 py-3 rounded-2xl shadow">Send Enquiry</button>
 </section>
 
-<!-- PROJECT SECTION TEMPLATE -->
+<!-- CURRENT PROJECTS -->
 <section class="py-12 px-6">
   <h2 class="text-2xl font-semibold mb-6">Current Projects</h2>
   <div id="currentProjects" class="grid md:grid-cols-2 gap-6"></div>
-</section>
-
-<section class="py-12 px-6 bg-white">
-  <h2 class="text-2xl font-semibold mb-6">Past Projects</h2>
-  <div id="pastProjects" class="grid md:grid-cols-2 gap-6"></div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="py-12 px-6">
-  <h2 class="text-2xl font-semibold mb-6">Testimonials</h2>
-  <div id="testimonials" class="grid md:grid-cols-2 gap-6"></div>
 </section>
 
 <!-- ENQUIRY -->
@@ -62,34 +43,44 @@ const CONFIG = {
 </section>
 
 <script>
-function createCarousel(images) {
+function createCarousel(images, id) {
   let index = 0;
+
+  setInterval(() => {
+    index = (index + 1) % images.length;
+    const img = document.getElementById(id);
+    if (img) img.src = images[index];
+  }, 3000);
+
   return `
-    <div class="relative">
-      <img src="${images[0]}" class="w-full h-48 object-cover rounded" id="carousel-${Math.random()}" />
-      <div class="flex justify-between mt-2">
-        <button onclick="this.parentElement.parentElement.querySelector('img').src='${images[0]}'">1</button>
-        ${images.map((img, i) => `<button onclick=\"this.parentElement.parentElement.querySelector('img').src='${img}'\">${i+1}</button>`).join('')}
-      </div>
+    <div class="relative bg-black rounded-xl overflow-hidden flex items-center justify-center" style="height:300px">
+      <img id="${id}" src="${images[0]}" class="max-h-full max-w-full object-contain" />
+      
+      <button onclick="prevSlide('${id}', ${JSON.stringify(images)})" class="absolute left-2 bg-white px-3 py-1 rounded shadow">◀</button>
+      <button onclick="nextSlide('${id}', ${JSON.stringify(images)})" class="absolute right-2 bg-white px-3 py-1 rounded shadow">▶</button>
     </div>`;
+}
+
+function prevSlide(id, images) {
+  const img = document.getElementById(id);
+  let current = images.indexOf(img.src.split('/').pop());
+  current = (current - 1 + images.length) % images.length;
+  img.src = images[current];
+}
+
+function nextSlide(id, images) {
+  const img = document.getElementById(id);
+  let current = images.indexOf(img.src.split('/').pop());
+  current = (current + 1) % images.length;
+  img.src = images[current];
 }
 
 function renderProjects(containerId, projects) {
   const container = document.getElementById(containerId);
-  container.innerHTML = projects.map(p => `
+  container.innerHTML = projects.map((p, i) => `
     <div class="bg-white p-4 rounded-2xl shadow">
       <h3 class="text-lg font-bold mb-2">${p.name}</h3>
-      ${createCarousel(p.images)}
-    </div>
-  `).join('');
-}
-
-function renderTestimonials() {
-  const container = document.getElementById('testimonials');
-  container.innerHTML = CONFIG.testimonials.map(t => `
-    <div class="bg-white p-4 rounded-2xl shadow">
-      <p>"${t.text}"</p>
-      <p class="mt-2 font-semibold">- ${t.name}</p>
+      ${createCarousel(p.images, 'carousel-' + i)}
     </div>
   `).join('');
 }
@@ -109,8 +100,6 @@ function scrollToEnquiry() {
 }
 
 renderProjects('currentProjects', CONFIG.currentProjects);
-renderProjects('pastProjects', CONFIG.pastProjects);
-renderTestimonials();
 </script>
 
 </body>
