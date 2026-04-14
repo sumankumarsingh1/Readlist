@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Big Dream Property Consultant</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-gray-900 to-black text-white">
+
+<script>
+const CONFIG = {
+  whatsappNumber: "+919525745198",
+  currentProjects: [
+    { name: "Big Dream Home - Parmanandpur1 - Patna", images: ["ritesh1/plot1.jpg","ritesh1/plot2.jpg","ritesh1/plot3.jpg","ritesh1/plot4.jpg","ritesh1/plot5.jpg","ritesh1/plot6.jpg","ritesh1/plot7.jpg","ritesh1/plot8.jpg"] },
+    { name: "Big Dream Home - Parmanandpur1 - Patna", images: ["ritesh1/plot1.jpg","ritesh1/plot2.jpg","ritesh1/plot3.jpg","ritesh1/plot4.jpg","ritesh1/plot5.jpg","ritesh1/plot6.jpg","ritesh1/plot7.jpg","ritesh1/plot8.jpg"] },
+    { name: "Big Dream Home - Parmanandpur1 - Patna", images: ["ritesh1/plot1.jpg","ritesh1/plot2.jpg","ritesh1/plot3.jpg","ritesh1/plot4.jpg","ritesh1/plot5.jpg","ritesh1/plot6.jpg","ritesh1/plot7.jpg","ritesh1/plot8.jpg"] },
+    { name: "Big Dream Home - Parmanandpur1 - Patna", images: ["ritesh1/plot1.jpg","ritesh1/plot2.jpg","ritesh1/plot3.jpg","ritesh1/plot4.jpg","ritesh1/plot5.jpg","ritesh1/plot6.jpg","ritesh1/plot7.jpg","ritesh1/plot8.jpg"] },
+  ]
+};
+</script>
+
+<!-- HERO -->
+<section class="py-16 text-center bg-gradient-to-r from-blue-900 via-purple-900 to-slate-900">
+  <h1 class="text-4xl font-bold">Your Trusted Property Consultant</h1>
+  <p class="mt-4 text-gray-300">Browse projects and enquire instantly</p>
+</section>
+
+<!-- PROJECT -->
+<section class="py-4">
+  <div id="projectContainer"></div>
+</section>
+
+<!-- ENQUIRY -->
+<section class="py-12 px-6 bg-white text-black">
+  <h2 class="text-2xl font-semibold mb-6">Send Enquiry</h2>
+  <form onsubmit="handleSubmit(event)" class="max-w-md space-y-4">
+    <input id="name" type="text" placeholder="Your Name" class="w-full border p-3 rounded" required />
+    <input id="phone" type="text" placeholder="Phone Number" class="w-full border p-3 rounded" required />
+    <textarea id="message" placeholder="Your Message" class="w-full border p-3 rounded"></textarea>
+    <button class="bg-blue-600 text-white px-6 py-3 rounded">Submit Enquiry</button>
+  </form>
+</section>
+
+<script>
+let currentProjectIndex = 0;
+let currentImageIndex = 0;
+
+function renderProject() {
+  const container = document.getElementById('projectContainer');
+  const project = CONFIG.currentProjects[currentProjectIndex];
+
+  currentImageIndex = 0;
+
+  container.innerHTML = `
+    <div class="text-center">
+      <div class="flex justify-center items-center gap-4 mb-4">
+        <button onclick="prevProject()" ${currentProjectIndex===0?'disabled':''} class="bg-white text-black px-4 py-2 rounded disabled:opacity-40">◀</button>
+        <h2 class="text-xl font-bold">${project.name}</h2>
+        <button onclick="nextProject()" ${currentProjectIndex===CONFIG.currentProjects.length-1?'disabled':''} class="bg-white text-black px-4 py-2 rounded disabled:opacity-40">▶</button>
+      </div>
+
+      <div class="relative">
+        <img id="mainImage" src="${project.images[0]}" class="w-full h-[80vh] object-cover" />
+
+        <button onclick="prevImage()" id="prevImg" class="absolute left-3 top-1/2 -translate-y-1/2 bg-black/50 px-4 py-2 rounded">◀</button>
+        <button onclick="nextImage()" id="nextImg" class="absolute right-3 top-1/2 -translate-y-1/2 bg-black/50 px-4 py-2 rounded">▶</button>
+      </div>
+    </div>
+  `;
+
+  updateImageButtons();
+}
+
+function nextProject(){
+  if(currentProjectIndex < CONFIG.currentProjects.length-1){
+    currentProjectIndex++;
+    renderProject();
+  }
+}
+
+function prevProject(){
+  if(currentProjectIndex > 0){
+    currentProjectIndex--;
+    renderProject();
+  }
+}
+
+function nextImage(){
+  const project = CONFIG.currentProjects[currentProjectIndex];
+  if(currentImageIndex < project.images.length-1){
+    currentImageIndex++;
+    document.getElementById('mainImage').src = project.images[currentImageIndex];
+    updateImageButtons();
+  }
+}
+
+function prevImage(){
+  if(currentImageIndex > 0){
+    currentImageIndex--;
+    const project = CONFIG.currentProjects[currentProjectIndex];
+    document.getElementById('mainImage').src = project.images[currentImageIndex];
+    updateImageButtons();
+  }
+}
+
+function updateImageButtons(){
+  const project = CONFIG.currentProjects[currentProjectIndex];
+  document.getElementById('prevImg').disabled = currentImageIndex===0;
+  document.getElementById('nextImg').disabled = currentImageIndex===project.images.length-1;
+}
+
+function handleSubmit(e){
+  e.preventDefault();
+
+  const name = document.getElementById('name').value;
+  const phone = document.getElementById('phone').value;
+  const message = document.getElementById('message').value;
+
+  const data = {
+    name,
+    phone,
+    message,
+    timestamp: new Date().toISOString()
+  };
+
+  // Encode (not secure encryption, just obfuscation)
+  const encoded = btoa(JSON.stringify(data));
+
+  console.log("Captured Enquiry:", encoded);
+
+  alert("Enquiry captured successfully!");
+}
+
+renderProject();
+</script>
+
+</body>
+</html>
