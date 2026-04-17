@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2 BHK Flat for Sale | Little Earth Pune</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Hero Section -->
+  <section class="bg-white shadow-md">
+    <div class="max-w-6xl mx-auto p-6 grid md:grid-cols-2 gap-6 items-center">
+      <div>
+        <h1 class="text-3xl font-bold mb-4">Premium 2 BHK Flat for Sale</h1>
+        <p class="text-lg mb-4">Little Earth, Kiwale – Near Pune Expressway & Hinjewadi IT Park</p>
+        <p class="mb-4">Carpet Area: <strong>520 sq.ft</strong> | Built-up: <strong>580 sq.ft</strong></p>
+        <p class="mb-4">3rd Floor in 16 Floor Tower</p>
+        <p class="mb-4 font-semibold">📞 Call / WhatsApp: +91 9823240624</p>
+        <a href="#contact" class="bg-green-500 text-white px-6 py-3 rounded-lg">Enquire Now</a>
+      </div>
+      <img src="flat1/1.jpg" class="rounded-xl shadow-lg" alt="Flat Image" />
+    </div>
+  </section>
+
+  <!-- Gallery -->
+<section class="max-w-6xl mx-auto p-6">
+    <h2 class="text-2xl font-semibold mb-4">Photo Gallery</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <div><img src="flat1/1.jpg" class="rounded-lg" /><p class="text-sm mt-1 text-center">Main Hall</p></div>
+      <div><img src="flat1/2.jpg" class="rounded-lg" /><p class="text-sm mt-1 text-center">Kitchen</p></div>
+      <div><img src="flat1/3.jpg" class="rounded-lg" /><p class="text-sm mt-1 text-center">Dry Balcony</p></div>
+      <div><img src="flat1/4.jpg" class="rounded-lg" /><p class="text-sm mt-1 text-center">Master Bedroom</p></div>
+      <div><img src="flat1/5.jpg" class="rounded-lg" /><p class="text-sm mt-1 text-center">Master Bedroom WC</p></div>
+      <div><img src="flat1/6.jpg" class="rounded-lg" /><p class="text-sm mt-1 text-center">Bedroom 2</p></div>
+      <div><img src="flat1/7.jpg" class="rounded-lg" /><p class="text-sm mt-1 text-center">Common WC</p></div>
+    </div>
+  </section>
+  <!-- Features -->
+  <section class="bg-white p-6">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-2xl font-semibold mb-4">Why Invest in This Property?</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Located in a 25-acre premium township</li>
+        <li>Close to Symbiosis Skills University – High rental demand</li>
+        <li>Near Hinjewadi IT Park – Ideal for professionals</li>
+        <li>Easy access to Mumbai-Pune Expressway</li>
+        <li>50+ lifestyle amenities & 5 clubhouses</li>
+        <li>Strong appreciation potential</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Amenities -->
+  <section class="max-w-6xl mx-auto p-6">
+    <h2 class="text-2xl font-semibold mb-4">Amenities</h2>
+    <div class="grid md:grid-cols-2 gap-4">
+      <div>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Swimming Pool & Gym</li>
+          <li>Tennis & Basketball Court</li>
+          <li>Cricket Practice Net</li>
+          <li>Yoga & Meditation Area</li>
+        </ul>
+      </div>
+      <div>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>24/7 Security & CCTV</li>
+          <li>Retail & Convenience Stores</li>
+          <li>Amphitheatre & Clubhouses</li>
+          <li>Green Open Spaces</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section id="contact" class="bg-green-50 p-6">
+    <div class="max-w-xl mx-auto">
+      <h2 class="text-2xl font-semibold mb-4 text-center">Schedule a Visit</h2>
+      <p class="text-center mb-4">Fill the form or directly WhatsApp for faster response.</p>
+      <form onsubmit="sendToWhatsApp(event)" class="space-y-4">
+        <input type="text" id="name" placeholder="Your Name" required class="w-full p-3 border rounded" />
+        <input type="tel" id="phone" placeholder="Phone Number" required class="w-full p-3 border rounded" />
+        <button type="submit" class="w-full bg-green-600 text-white p-3 rounded-lg font-semibold">Send Enquiry on WhatsApp</button>
+      </form>
+      <div class="text-center mt-4">
+        <p class="mb-2">Prefer direct contact?</p>
+        <a href="https://wa.me/919823240624" target="_blank" class="bg-green-500 text-white px-6 py-3 rounded-lg inline-block">📲 Chat on WhatsApp</a>
+        <p class="mt-2">or Call: <strong>+91 9823240624</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function sendToWhatsApp(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+
+      const message = `Hello, I am interested in your flat.%0AName: ${name}%0APhone: ${phone}`;
+      const yourNumber = "919823240624";
+
+      window.open(`https://wa.me/${yourNumber}?text=${message}`, '_blank');
+    }
+  </script>
+
+  <!-- Footer -->
+  <footer class="text-center p-4 bg-gray-200 mt-6">
+    <p>© 2026 Flat Sale Listing | Direct Owner Deal</p>
+  </footer>
+
+</body>
+</html>
