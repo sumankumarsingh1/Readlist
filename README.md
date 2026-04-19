@@ -26,6 +26,8 @@
 
 ## [Mermaid](./Mermaid/Mermaid1.md)
 
+## [Terraform](./terraform/terraform.md)
+
 
 * Operating Systems
   * Linux
