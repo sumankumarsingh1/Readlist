@@ -110,5 +110,5 @@ Exam Centers in Pune:
 
 | Location | Center Name | Address | Email  | Telephone | License |
 | -------- | -------- | -------- | -------- | -------- | -------- |
-| India	| AK's Training Academy	Unit 101,102, Sumangal Heights Society, , Oppo. Patel Tiles, Rambhau Kamble Path, Near Shivajinagar Metro Station,  Pune, India, 411016 | k.paryemalani@gmail.com | 91-9764005804 | 31 March 2027 |
+| India	| AK's Training Academy	| Unit 101,102, Sumangal Heights Society, , Oppo. Patel Tiles, Rambhau Kamble Path, Near Shivajinagar Metro Station,  Pune, India, 411016 | k.paryemalani@gmail.com | 91-9764005804 | 31 March 2027 |
 | India	| Proschool - Pune | 5th Floor, Surya Bhavan, Bldg, Fergusson College Rd, opp. Lalit Mahal Hotel, Shivajinagar, Pune 411005	| pune.academics@proschoolonline.com | 91- 91363-88500 | 31 March 2027 |
