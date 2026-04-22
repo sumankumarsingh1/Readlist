@@ -24,7 +24,7 @@ Enrolled on 22 Aug 2025
   * Section Summary
   * FA1 Section 1 optional exam questions
   * FA1 Section 1 graded exam questions (10 Questions) 
-    * FA1 section graded exam questions due May 2 2026 4:58 AM GMT+5:30
+    * <span style="color:red">FA1 section graded exam questions due May 2 2026 4:58 AM GMT+5:30</span>
   * FA1 Section 1 further optional exam questions
 
 * FA1 Section 2
@@ -34,7 +34,7 @@ Enrolled on 22 Aug 2025
   * Section summary
   * FA1 Section 2 optional exam questions
   * FA1 Section 2 graded exam questions (10 Questions)
-  * FA1 section graded exam questions due May 7 2026 4:58 AM GMT+5:30
+    * <span style="color:red">FA1 section graded exam questions due May 7 2026 4:58 AM GMT+5:30</span>
   * FA1 Section 2 further optional exam questions
 
 * FA1 Section 3
@@ -44,7 +44,7 @@ Enrolled on 22 Aug 2025
   * Section summary
   * FA1 Section 3 optional exam questions
   * FA1 Section 3 graded exam questions (10 Questions)
-  * FA1 section graded exam questions due May 12 2026 4:58 AM GMT+5:30
+    * <span style="color:red">FA1 section graded exam questions due May 12 2026 4:58 AM GMT+5:30</span>
   * FA1 Section 3 further optional exam questions
 
 * FA1 Section 4
@@ -53,7 +53,7 @@ Enrolled on 22 Aug 2025
   * Section summary
   * FA1 Section 4 optional exam questions
   * FA1 Section 4 graded exam questions (10 Questions)
-  * FA1 section graded exam questions due May 17 2026 4:58 AM GMT+5:30
+    * <span style="color:red">FA1 section graded exam questions due May 17 2026 4:58 AM GMT+5:30</span>
   * FA1 Section 4 further optional exam questions
 
 * FA1 Section 5
@@ -64,7 +64,7 @@ Enrolled on 22 Aug 2025
   * Section summary
   * FA1 Section 5 optional exam questions
   * FA1 Section 5 graded exam questions (10 Questions)
-  * FA1 section graded exam questions due May 22 2026 4:58 AM GMT+5:30
+    * <span style="color:red">FA1 section graded exam questions due May 22 2026 4:58 AM GMT+5:30</span>
   * FA1 Section 5 further optional exam questions
 
 * Revision section
@@ -72,7 +72,7 @@ Enrolled on 22 Aug 2025
   * Lesson 2: FA1 optional practice test
   * Lesson 3: Revision test
   * Lesson 4: FA1 graded practice test (50 Questions)
-  * FA1 graded practice test due May 27 2026 4:58 AM GMT+5:30
+    * <span style="color:red">FA1 graded practice test due May 27 2026 4:58 AM GMT+5:30</span>
   * Lesson 5: Exam Debrief Videos
   * Lesson 6: What next?
   * End of course survey
