@@ -102,11 +102,9 @@ Online learning is a new experience for many people and is obviously different f
 
 * **Look after your wellbeing**: It’s important to look after your wellbeing. Feeling stressed and overworked is going to have a negative impact on your ability to learn so make sure to take regular breaks from the screen and don't take on too much at once. Reach out to your community when you need support and do check out the wellbeing hub on the [ACCA website](https://www.accaglobal.com/lk/en/student/wellbeing.html) for tips on balancing life, work and study.
 
-* **Plan for exam success**: Lastly, book that on-demand exam! Having a date to work towards will give your learning focus and keep you motivated throughout your studies. You can find information about booking exams here.
+* **Plan for exam success**: Lastly, book that on-demand exam! Having a date to work towards will give your learning focus and keep you motivated throughout your studies. You can find information about booking exams [here](https://www.accaglobal.com/lk/en/student/exam-entry-and-administration/enter-an-exam.html).
 
-
-Exam Centers in Pune:
-
+### Exam Centers in Pune:
 
 | Location | Center Name | Address | Email  | Telephone | License |
 | -------- | -------- | -------- | -------- | -------- | -------- |
